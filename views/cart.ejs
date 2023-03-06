@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cart.css">
+    
+</head>
+<body>
+    <div class = "card-wrapper">
+        <div class = "card">
+          <!-- card left -->
+          <div class = "product-imgs">
+            <div class = "img-display">
+              <div class = "img-showcase">
+                <img src ="<%= list.url %>" alt = "Karigars image">
+               
+              </div>
+            </div>
+          </div>
+          <!-- card right -->
+          <div class = "product-content">
+            <h2 class = "product-title">Your Cart</h2>
+            
+            <div class = "product-rating">
+              <i class = "fas fa-star"></i>
+              <i class = "fas fa-star"></i>
+              <i class = "fas fa-star"></i>
+              <i class = "fas fa-star"></i>
+              <i class = "fas fa-star-half-alt"></i>
+              
+            </div>
+      
+            <div class = "product-price">
+              <p class = "new-price">Price per day : <span >₹<%= list.price %>.00</span></p>
+            </div>
+      
+            <div class = "product-detail">
+              <h2>Karigar Full Details :- </h2>
+              
+              <ul>
+                <li>Name: <span><%= list.fname + list.lname%></span></li>
+                <li>Title: <span><%= list.title %></span></li>
+                <li>Category: <span><%= list.category %></span></li>
+                <li>Gender: <span><%= list.gender %></span></li>
+                <li>Skills: <span><%= list.skill %></span></li>
+                <li>Qualificaion: <span><%= list.qualification %></span></li>
+                <li>Experience: <span><%= list.exp %>+years</span></li>
+                <li>Location: <span><%= list.city %>/<%= list.state %></span></li>
+                <li>Email: <span><%= list.email %></span></li>
+              </ul>
+            </div>
+      
+            <div class = "purchase-info"> No. of Days Required : 
+              <input type = "number" class="days" onchange=clac() min = "1" value = "1">
+              <br>
+                      <span>     </span> No. of Persons Required : 
+              <input type = "number" class="persons" onchange=clac() min = "1" value = "1">
+              
+              <p >Total Price : <strong><span class="comprice"></span></strong> </p>
+              <br>
+              <!-- <button type = "button" class = "btn">
+                Add to Cart <i class = "fas fa-shopping-cart"></i>
+              </button> -->
+              <form action="/checkout" method="post">
+                <input type="text" id="fpr" readonly="readonly" name="fprice" style="display: none;">
+                <input type="text" id="gstp" readonly="readonly" name="gstprice" style="display: none;">
+                <button type = "submit" class = "btn">Proceed to Checkout ></button> 
+              </form>
+            </div>
+      
+           <div class="newp" style="display: none;"><%= list.price %></div>
+          </div>
+        </div>
+      </div>
+</body>
+<script>
+    function clac(){
+   const price =  document.querySelector(".comprice");
+   const send_price =  document.querySelector("#fpr");
+   const gst_price =  document.querySelector("#gstp");
+   const pre = document.querySelector(".newp").innerHTML;
+   let days = document.querySelector(".days").value;
+   let persons = document.querySelector(".persons").value;
+   let initp = parseFloat(pre),day = parseFloat(days),person=parseFloat(persons);
+   let fp = initp*day*person;
+  //  console.log(initp*2);
+   price.innerHTML=`₹${fp}.00`;
+   send_price.value =  fp;
+   gst_price.value = fp+fp*(0.18);
+   }
+   clac();
+</script>
+</html>

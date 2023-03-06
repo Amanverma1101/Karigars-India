@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Oppurtunities</title>
+    <link rel="stylesheet" href="css/karigar.css" />
+    <!-- <link rel="stylesheet" href="css/popup.css"/> -->
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/internship.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
+    <link rel="stylesheet" href="css/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <%- include("nav") -%>
+      
+          <h2 class="h-primary clss centerr" id="pricing-heading">Job Oppurtunities</h2>
+          <!--cards -->
+          <div class="main"> 
+   
+          <!--cards -->
+  
+            <!--cards -->
+       
+  
+              <!--cards -->
+  
+  
+  
+                <!--cards -->
+                <br>
+                <br>
+            <!-----second section begins-->
+          </div>
+          
+              <!--cards -->
+      <!------- footer starts -------->
+      <%- include("footer") -%>
+      <!------- footer starts -------->
+  
+  
+  
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+    
+const firebaseConfig = {
+  apiKey: "AIzaSyDoMlriG5ch5Vursn-T1N8MOOtifZlT6LU",
+  authDomain: "designkoktail-f13c3.firebaseapp.com",
+  projectId: "designkoktail-f13c3",
+  storageBucket: "designkoktail-f13c3.appspot.com",
+  messagingSenderId: "237876784229",
+  appId: "1:237876784229:web:85cdaab127d61f2b0c6a8c"
+};
+  
+//   // initialize firebase
+  firebase.initializeApp(firebaseConfig);
+  var firestore = firebase.firestore();
+  const db = firestore.collection("postjob");
+  const main = document.querySelector(".row");
+//   main.innerHTML='';
+firestore.collection("postjob").get().then((snapshot) =>{
+        const main = document.querySelector(".main");
+        snapshot.docs.forEach((doc)=>{
+          console.log(doc.data());
+
+
+          const cname = doc.data().cname;
+          const email = doc.data().email;
+          const salary = doc.data().salary;
+          const add = doc.data().add;
+          const url = doc.data().url;
+          const desc = doc.data().desc;
+          const jobloc= doc.data().jobloc;
+          const jobcategory = doc.data().jobcategory;
+          const jobtype = doc.data().jobtype;
+          const gst = doc.data().gst;
+          const jobtitle = doc.data().jobtitle;
+          
+  
+          // const title = doc.data().title;
+          // const price = doc.data().price;
+          // const postal = doc.data().postal;
+        main.innerHTML+=`
+        <div class="card">
+       
+        <div class="image">
+           <img src="${url}">
+        </div>
+        <div class="title">
+          <h1>${cname}</h1>
+        </div>
+  
+        <div class="title">
+          <p>Job Title : ${jobtitle}</p>
+          <p>Desc. : ${desc}</p>
+          <p>Location : ${jobloc}</p>
+          <p>Category : ${jobcategory}</p>
+          <p>Expected Salary : ${salary}</p>
+          <p>Type : ${jobtype}</p>
+          <p>Email : ${email}</p>
+        </div>
+  
+        <div class="des">
+
+          
+          <a href="" ><button class="click">Apply Now</button></a>
+        </div>
+
+          </div>
+        </div>
+        `;
+      });
+    });
+ 
+
+</script>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Register</title>
+   </head>
+   <body>
+  <%- include("nav") -%>
+  <br>
+  
+  
+  <section class="container forms">
+    <div class="form signup">
+        <div class="form-content">
+            <header>Signup</header>
+            <!-- <form action="/signup" id="signupform" method="post"> -->
+            <form action="#" id="signupform">
+                <div class="field input-field">
+                    <input type="email" placeholder="Email" id="emailreg" name="emailreg" class="input">
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" placeholder="Create password" id="passwordreg" name="passwordreg" class="password">
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" placeholder="Confirm password" id="confpassword" name="confpassword" class="password">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+
+                <div class="field button-field">
+                    <button id="register">Signup</button>
+                </div>
+            </form>
+
+            <div class="form-link">
+                <span>Already have an account? <a href="/login" class="link login-link">Login</a></span>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="media-options">
+            <a href="#" class="field facebook">
+                <i class='bx bxl-facebook facebook-icon'></i>
+                <span>Signup with Facebook</span>
+            </a>
+        </div>
+
+        <div class="media-options">
+            <a href="https://google-auth-testt.netlify.app/" class="field google">
+                <img src="images/gicon.png" alt="" class="google-img">
+                <span>Signup with Google</span>
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- Signup Form -->
+
+    </section>
+<br>
+  
+
+<!------------ foooter starts --------->
+<%- include("footer") -%>
+<!------------ foooter ends ------------->
+<!-- <script src="js/login.js"></script> -->
+</body>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script type="module">
+	  // Import the functions you need from the SDKs you need
+      
+	  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+	  // TODO: Add SDKs for Firebase products that you want to use
+	  // https://firebase.google.com/docs/web/setup#available-libraries
+
+	  // Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+            apiKey: "AIzaSyDoMlriG5ch5Vursn-T1N8MOOtifZlT6LU",
+            authDomain: "designkoktail-f13c3.firebaseapp.com",
+            projectId: "designkoktail-f13c3",
+            storageBucket: "designkoktail-f13c3.appspot.com",
+            messagingSenderId: "237876784229",
+            appId: "1:237876784229:web:85cdaab127d61f2b0c6a8c"
+  };
+
+	  // Initialize Firebase
+	  const app = initializeApp(firebaseConfig);
+	  const analytics = getAnalytics(app);
+	  const auth = getAuth();
+	//   console.log(app);
+        firebase.initializeApp(firebaseConfig);
+        var firestore = firebase.firestore();
+    //   // reference your database
+
+	  
+
+	  //----- New Registration code start	  
+	  document.getElementById("register").addEventListener("click", async function(e) {
+        e.preventDefault();
+		  var email =  document.getElementById("emailreg").value;
+		  var password = document.getElementById("passwordreg").value;
+		  var confirm_password = document.getElementById("confpassword").value;
+		  //For new registration
+          if(password===confirm_password){
+		  await createUserWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    // Signed in 
+		    const user = userCredential.user;
+		    // const id= user.reloadUserInfo.localId;
+
+            const db = firestore.collection(`karigarss`);
+            db.doc(document.getElementById("emailreg").value).set({
+                email: email,
+                }).then(()=>{   
+                //    alert("data stored to firestore !");
+                //    document.getElementById("karigarsform").reset();
+                // console.log("data saved");
+                    var request = new XMLHttpRequest();
+                    request.open("POST", '/signup', true);
+                    request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+                    request.send (email);
+                    window.location.href="/select";
+                })
+                .catch((error)=>{
+                alert(error);
+                });
+
+
+            document.getElementById("signupform").reset();
+            // window.location.replace("select.html");
+		    // alert("Registration successfully!! Now Login");
+		    // ...
+		  })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    console.log(errorMessage);
+		    alert(error);
+		  });		  		  
+        }else{
+            alert("Password / Confirm_Paswword are different !");
+        }
+	  });
+	  //----- End
+
+	 
+	</script>
+
+
+
+</html>
+ 

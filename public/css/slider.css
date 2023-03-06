@@ -1,0 +1,12 @@
+#slider{
+    max-width: 3000px;
+    height: auto;
+}
+
+.indicators{
+    color: grey;
+}
+
+.active{
+    color: black;
+}

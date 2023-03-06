@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karigars Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="css/k_form.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+          Karigar's Registration Form
+        </div>
+        <form method="post" action="/kform" autocomplete="off" name="google-sheet" id="karigarsform">
+        <div class="form ">
+
+          <div class="note">
+            <p>All fields marked with * are mandatory</p>
+         </div>
+           <div class="inputfield">
+              <label>First Name  <span class="note">*</span></label>
+              <input type="text" name="fname" class="input" id="fname" required/>
+           </div>  
+            <div class="inputfield">
+              <label>Last Name</label>
+              <input type="text" name="lname" class="input" id="lname"/>
+           </div>  
+           
+         <div class="inputfield">
+          <label>Gender <span class="note">*</span></label>
+          <div class="custom_select">
+            <select id="gender" name="gender">
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+       </div> 
+
+         <div class="inputfield">
+          <label>Phone Number  <span class="note">*</span></label>
+          <input type="text" name="phone" class="input" id="phone" minlength="10" maxlength="10" required/>
+       </div> 
+
+            <div class="inputfield">
+              <label>Email Address</label>
+              <input type="email" name="email" class="input" id="email" value="<%= mailid %>" readonly="readonly"/>
+           </div> 
+
+           <div class="inputfield">
+            <label>Full Address</label>
+            <input type="text" class="textarea" name="add" id="add"/>
+         </div> 
+           <div class="inputfield">
+            <label>City</label>
+            <input type="text" class="textarea" name="city" id="city"/>
+         </div> 
+           <div class="inputfield">
+            <label>State</label>
+            <input type="text" class="textarea" name="state" id="state"/>
+         </div> 
+
+          <div class="inputfield">
+          <label>Category <span class="note">*</span></label>
+          <div class="custom_select">
+            <select id="category" name="category">
+              <option value="">Select</option>
+              <option value="Construction">Construction</option>
+              <option value="Painter">Painter</option>
+              <option value="Plumber">Plumber</option>
+              <option value="Welder">Welder</option>
+              <option value="Plaster_Worker">Plaster Worker</option>
+            </select>
+          </div>
+       </div> 
+
+       <div class="inputfield">
+        <label>Title  <span class="note">*</span></label>
+        <input type="text" class="textarea" name="title" id="title" placeholder="Raj Mistri/Labour/Painter..etc" required/>
+       </div> 
+         
+          <div class="inputfield">
+            <label>Key Skill  <span class="note">*</span></label>
+            <input type="text" class="textarea" name="skill" id="skill" required/>
+           </div> 
+
+           <div class="inputfield">
+            <label>Price (per day)  <span class="note">*</span></label>
+            <input type="number" class="textarea" name="price" id="price" required/>
+           </div> 
+
+          <div class="inputfield">
+              <label>Experience (in years)</label>
+              <input type="number" class="textarea" name="exp" id="exp"/>
+           </div> 
+          <div class="inputfield">
+              <label>Qualification</label>
+              <input type="text" class="textarea" name="qualification" id="qualification"/>
+           </div> 
+          <div class="inputfield">
+            <label>PIN Code  <span class="note">*</span></label>
+            <input type="number" name="postal" class="input" id="postal" minlength="6" maxlength="6" required/>
+           </div> 
+          <div class="inputfield">
+            <label>Upload Image URL</label>
+            <input type="text" name="image_url" class="input" id="image_url"/>
+           </div> 
+          
+          <div class="inputfield">
+            <input type="submit" name="submit" value="Register" class="btn">
+          </div>
+
+          <div class="backbtn">
+          <input id="myButton" type="button" name="submit" value="Back to Home Page" class="btn"></a>
+          </div>
+
+        </div>
+    </form>
+</div>
+          
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+         
+</body>
+</html>
+
+
+
+<!--  https://docs.google.com/spreadsheets/d/1FxR-UsHAbSgSDdnjVbIg4H8tdtH9nDg5Mi7R3s71Tcg/edit?usp=sharing  -->
+
+
+
+

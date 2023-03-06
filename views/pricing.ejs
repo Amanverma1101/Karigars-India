@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pricing Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/pricing.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/internship.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <%- include("nav") -%>
+      <div class="pricehead">
+      <h2 class="h-primary clss centerr" id="pricing-heading">Exciting Deals</h2>
+      <p class="centerr">Call 7011447737 for plan related queries.</p>
+      </div>
+        <section class="package-container">
+
+            <div class="packages">
+                <h1 class="first">WALLET</h1>
+                <h2 class="text1">₹1499</h2>
+                <ul class="list">
+                    <li>Top up of ₹ 2000</li>
+                    <br>
+                    <li>Valid for 365 days</li>
+                    <br>
+                    <li>Good for 1 - 2 Hires of candidate profiles</li>
+                    <br>
+                    <li>Unlimited jobs live</li>
+                    <br>
+                    <li>Mib ₹ 50 / response</li>
+                    <br>
+                    <li>₹ 5 / unlock</li>
+                </ul>
+                <a href="#" class="button">Buy Now</a>
+            </div>
+
+            <div class="packages">
+                    <h1 class="first">FIXED</h1>
+                    <h2 class="text1">₹2299</h2>
+                    <ul class="list">
+                      <li>Good for 2 Hires candidate profiles</li>
+                      <br>
+                      <li>Unlimited responses</li>
+                      <br>
+                      <li>Valid for 14 days</li>
+                      <br>
+                      <li>Premium Support</li>
+                      <br>
+                      <li>Unlimited jobs live</li>
+                      <br>
+                      <li>₹ 5 / unlock</li>
+                    </ul>
+                    <a href="#" class="button">Buy Now</a>
+                  </div>
+            
+                <div class="packages">
+                    <h1 class="first">CORPORATE</h1>
+                    <h2 class="text1">₹3899</h2>
+                    <ul class="list">
+                      <li>Good for Multiple Hires</li>
+                      <br>
+                      <li>Unlimited responses</li>
+                      <br>
+                      <li>2 jobs lives at same time</li>
+                      <br>
+                      <li>free access to 1000 candidate profiles</li>
+                      <br>
+                      <li>Valid for 28 days</li>
+                      <br>
+                      <li>Premium Support</li>
+                    </ul>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
+                <div class="packages">
+                    <h1 class="first">ENTERPRISE</h1>
+                    <h2 class="text1">₹9499</h2>
+                    <ul class="list">
+                      <li>Good for Multiple Hires</li>
+                      <br>
+                      <li>Unlimited responses</li>
+                      <br>
+                      <li>2 jobs lives at same time</li>
+                      <br>
+                      <li>free access to 3000 candidate profiles</li>
+                      <br>
+                      <li>Valid for 84 days</li>
+                      <br>
+                      <li>Ultra Premium Support</li>
+                    </ul>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
+          </div>
+
+        </section>
+
+    <!------------ foooter starts --------->
+    <%- include("footer") -%>
+    <!------------ foooter ends ------------->
+
+<script>
+
+
+    function check(){
+        var checkBox = document.getElementById("checkbox");
+        var text1 = document.getElementsByClassName("text1");
+        var text2 = document.getElementsByClassName("text2");
+
+        for (var i=0; i < text1.length; i++){
+            if(checkBox.checked == true){
+                text1[i].style.display = "block";
+                text2[i].style.display = "none";
+            }
+            else if (checkBox.checked == false){
+                text1[i].style.display = "none";
+                text2[i].style.display = "block";
+            }
+        }
+    }
+
+check();
+</script>
+
+</body>
+</html>

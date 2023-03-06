@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "designkoktail-f13c3",
+  "private_key_id": "b6ab6bf18a4bed45b0451113769d7e088954ff65",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQD8KKteWrAuQ44E\npmMXljAK4ray9XYFYRHYlguU4qYfdSc8ZPKuE+kBO13ZOoANlUEMehsg9GhXLTFq\n/Qxtz+ORxbKXWF2s6fTyvo2YDqy9HH2fm6MZGwYoFAClpuYJafxQbJc/cMmAHLbf\nYBis0f9Ei7vrv9DT+E5kUgpZmLf/3xYRTXMhQDnUyhpg0sPus615w2Y26J2Nlb3Y\n6Vk1i6BUpGPLLN6oNT1HFvPDyLW7n551Ku5GVX9pCg63qtMNamnYLkhHbV/mO1wn\n69l8J+5uODjl/2rF5+JCMTbX2fUV1o+CVQdIerWBqbbzOLgDngD818iZAjfb43CM\n8G/GPVuTAgMBAAECggEAKOlMTIW4OflZ7GU2hJgoeUupSsXKfTrvk01c2a4gN9Bh\nKkpSmW2/iySfqGP2bL2/jQ+uoR0mZKZ/cxVVU+e7y2XhAO8kW66lwFCsVnRjEFe0\nBhZRUvxwdkYwiK/YeMSKXF4R+AgLmU6PWRSVTEzR9sQZHDnF3u5Vga9R4JGHoOq1\njvibi1rOlL4s3ZdidIJFx57fnBWtNpYThIS78Q4S8xk9JBauxIXDg9+L+wgxHR6P\nhdWUAyi3Ypt2hqaQAyydoqceEwaijO34Wnzx7KqwxlAwlGzWvqAcBOBAmXVlTp8D\nBifSHzc1j2tBGKRovMd4wEmDI7y5rDMHgL4ASmCQ8QKBgQD+mbRSuRbLrONSiTf+\nBWU4i/NzXF9EImLpJSlmqSIeNsno0IJ91rO/Jur+t7XX0KA7UWXRpTdCYFiUUwbh\nflFskI5puD5KTEX37hB+o+tzsALle59mVRkC66HsqlicqNwamLPr/mKkMJHYYf1T\nJqGzqaGIr5lxmsdTCFicwxB9ywKBgQD9i4dxQUVJquF4IdlSRuV6fjp6tyl4thFj\nBmuxygWwaRxGOIVgefPmn8wKv/D24JSebevtD8D6n+TmtVEhWyy2UkWjniqLUcQm\nOCPo81S8yImqpvCvle/RIjZE9dFOstbVMD94xo8UpfEFvc7+p/cWwCZAv5ewTIFE\nBV0HqFDgWQKBgCh54SwhltkslDtD623sB6qUvVCCx/Z6DQWJzeovS2hIR5NGyugc\noRjrpAJ4zGUSGtczWp+Yx4865/o0tOxWe7VpyepOy0BeneULqP2pK76Jpfw7yhyn\nvME1GtoYPtwxEET+L+R93crCmf0vnumAQ8bfWfn0CM4B0FyIACZz8IQ/AoGAKO1k\nAKkrmRena6/zF6/wDRThNbvpSt4A8n4v1jQpNO/Sq5cmGIu3DkxPMJEJQaDA/M37\nnnnDifFTjtZH8V15WzjumtnGPlUFl7HKQik9TXgFmPF3urA2VQjzv6/6iHyf5yvx\novpSUF/1Bxs7lanhXd/IjP0gbEn9N9Cx0rGd1IkCgYA5tQZyVGZx19j5zgblyP7N\nU72Fi/cEC7k7UOmhlIKARUbTlsyXsJah5pknnNVpVIjrvcc3rDbPglLQPhXavtt0\nyg1RyFZD7snfkjK9Z2q06/MjND/d8toMXUytrBYZmSSpbm2/TZPc6DWCICzm93XJ\nbnZD7uXm3qT5NiztLGWJlw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-a7jyl@designkoktail-f13c3.iam.gserviceaccount.com",
+  "client_id": "106033311090870765911",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-a7jyl%40designkoktail-f13c3.iam.gserviceaccount.com"
+}

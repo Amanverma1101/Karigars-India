@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Job</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <link rel="stylesheet" href="css/k_form.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+          Post A New Job
+        </div>
+        
+        <form method="post" autocomplete="off" name="google-sheet" id="postform">
+        <div class="form ">
+
+          <div class="note">
+            <p>All fields marked with * are mandatory</p>
+         </div>
+           <div class="inputfield">
+              <label>Your Email  <span class="note">*</span></label>
+              <input type="email" name="email" class="input" id="email" placeholder="you@yourdomain.com" required/>
+           </div>  
+            <div class="inputfield">
+              <label>Job Title</label>
+              <input type="text" name="jobtitle" class="input" id="jobtitle"/>
+           </div>  
+            <div class="inputfield">
+              <label>Job Location</label>
+              <input type="text" name="jobloc" class="input" id="jobloc"/>
+           </div>  
+           
+         <div class="inputfield">
+          <label>Job Type<span class="note">*</span></label>
+          <div class="custom_select">
+            <select id="jobtype">
+              <option value="">Select</option>
+              <option value="Full-Time">Full Time</option>
+              <option value="Part-Time">Part Time</option>
+              <option value="Internship">Internship</option>
+              <option value="Temporary">Temporary</option>
+            </select>
+          </div>
+       </div> 
+         <div class="inputfield">
+          <label>Job Category<span class="note">*</span></label>
+          <div class="custom_select">
+            <select id="jobcategory">
+              <option value="">Select</option>
+              <option value="Carpenter">Carpenter</option>
+              <option value="Contractor">Contractor</option>
+              <option value="Sink-Fittting">Sink Fittting</option>
+              <option value="Piping-Work">Piping Work</option>
+              <option value="Tile-Work">Tile Work</option>
+              <option value="Stone-Work">Stone Work</option>
+              <option value="Concrete-Work">Concrete Work</option>
+              <option value="Bathroom-Work">Bathroom Work</option>
+              <option value="Welding-Work">Welding Work</option>
+              <option value="Repairing-Work">Repairing Work</option>
+              <option value="Small-Renovation-Contractor">Small Renovation Contractor</option>
+              <option value="Electrical-Fitting-Work">Electrical Fitting Work</option>
+              <option value="Regulator/Light-Bulb-fitting">Regulator/Light Bulb fitting</option>
+            </select>
+          </div>
+       </div> 
+
+         <div class="inputfield">
+          <label>Salary <span class="note">*</span></label>
+          <input type="text" name="Salary" class="input" id="salary" required/>
+       </div> 
+
+           <div class="inputfield">
+            <label>Job Description<span class="note">*</span></label>
+            <input type="text" class="textarea" name="Job-Description" id="desc" required/>
+           </div> 
+           <div class="inputfield ftitle">
+            <h3>Company Details :-</h3>
+           </div>
+         <div class="inputfield">
+          <label>Company Name<span class="note">*</span></label>
+          <input type="text" class="textarea" name="Company-name" id="cname"/>
+       </div> 
+         <div class="inputfield">
+          <label>Company GST Number<span class="note">*</span></label>
+          <input type="text" class="textarea" name="Company-GST-number" id="gst"/>
+       </div> 
+       <div class="inputfield">
+        <label>Company Logo URL<span class="note">*</span></label>
+        <input type="text" class="textarea" name="c-url" id="url"/>
+     </div> 
+     <div class="inputfield">
+      <label>Company Address</label>
+      <input type="text" class="textarea" name="c-address" id="add"/>
+   </div> 
+          <div class="inputfield">
+            <input type="submit" name="submit" value="Post this New Job" class="btn">
+          </div>
+
+          <div class="backbtn">
+          <input id="myButton" type="button" name="submit" value="Back to Home Page" class="btn"></a>
+          </div>
+
+        </div>
+    </form>
+</div>
+          
+<!-- <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx4vmQuYhf3RJcxgG99i_1GhImxmAUWgqy5JQk8GkC0K8AJXeYfNUB9Oq3L8UQSmks/exec'
+  const form = document.forms['google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then().catch(error => console.error('Error!', error.message))
+      // .then(response => alert(" Registration Successful !"))
+      
+  })
+</script> -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="p_firebase.js"></script>
+
+<script type="text/javascript">
+document.getElementById("myButton").onclick = function () {
+    location.href = "/";
+};
+</script>
+         
+</body>
+</html>
+
+
+
+<!--  https://docs.google.com/spreadsheets/d/1FxR-UsHAbSgSDdnjVbIg4H8tdtH9nDg5Mi7R3s71Tcg/edit?usp=sharing  -->

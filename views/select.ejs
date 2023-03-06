@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Choose Option</title>
+      <link rel="stylesheet" href="./css/select.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/nav.css">
+    
+    <link rel="stylesheet" href="css/button.css">
+   
+    <link rel="stylesheet" href="css/footer.css">
+  </head>
+  <body>
+
+
+<%- include("nav") -%>
+
+
+<div class="main-container">
+  <h4>Fill this form to create your Profile :-</h4>
+    <div class="cards">
+      <div class="card card-4">
+        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <h2 class="card__title"> To apply for Karigars</h2>
+        <p class="card__apply">
+          <a class="card__link" href="/kform">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </p>
+      </div>
+      <div class="card card-4">
+        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+       
+        <h2 class="card__title">To apply for Companies</h2>
+        <p class="card__apply">
+          <a class="card__link" href="/cform">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!------------ foooter starts --------->
+  <%- include("footer") -%>
+<!------------ foooter ends ------------->
+
+
+  </body>
+</html>
