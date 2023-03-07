@@ -8,14 +8,14 @@
     width: 100%;
     height: 70vh;
     /* background: #e8ecff; */
-    position: relative;
+    /* position: relative; */
     margin-bottom: 20px;
 }
 .veiw-box{
     width: 900px;
     height: 450px;
     border-radius: 220px;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);

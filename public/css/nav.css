@@ -12,9 +12,9 @@ body{
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 15px 100px;
+    padding: 15px 10px;
 }
 #navbar a{
     text-decoration: none;
@@ -34,7 +34,7 @@ body{
 .logo{
     cursor: pointer;
     font-style: italic;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: white;
 }
 .sublogo{
@@ -50,7 +50,7 @@ body{
 .item a{
     text-decoration: none;
     color: white;
-    padding: 0 10px;
+    padding: 1px 10px;
 }
 .Search{
     width: 300px;

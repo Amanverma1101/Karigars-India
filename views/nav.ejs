@@ -2,7 +2,7 @@
         <div>
           <a href="/"><div class="logo">Karigars India</div>
               <div class="sublogo">One Place for Dream jobs</div>
-              </a>
+            </a>
         </div>
           <ul>
               <li class="item"><a href="/services">Services</a></li>
@@ -15,23 +15,35 @@
           <div class="Search">
                <div class="menu-wrap">
                   <div class="menu h-xs ">
+                    <% if(msg!=="Logout" || icon===""){%>
                      <a href="/login">
                          <div class="menu-item">
                              Login / Register
                          </div>
                      </a>
-                    
+                     <% } %>
+
                      <a href="/postjob">
-                         <div class="menu-item active">
-                             PostJob
-                         </div>
+                      <div class="menu-item active">
+                          PostJob
+                      </div>
                      </a>
+
+                     <% if(icon !==""){ %>
+                      <a href="/profile" id="profile" title="Profile">
+                      <div class="menu-item active">
+                       Profile
+                    
+                  <i class="fa <%= icon %>" aria-hidden="true"></i></div></a>
+                  <% } %>  
+                    
+     
                   </div>
                 </div>
           </div>
           <div class="sbar">
-          <a href="/profile" id="profile" title="Profile"><i class="fa <%= icon %>" aria-hidden="true"></i></a>
-          </div>
+
+        </div>
           <div class="lang">
             <a class="btn" onclick="changeLanguage('hin')">हिंदी</a>
             <a class="btn">English</a>
