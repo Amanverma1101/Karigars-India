@@ -17,9 +17,8 @@ footer::before{
   position: absolute;
   left: 0;
   top: 100px;
-  /* height: 1px; */
   width: 100%;
-  background: #AFAFB6;
+ 
 }
 footer .content{
   max-width: 1250px;
@@ -30,7 +29,7 @@ footer .content .topp{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 5px;
 }
 .content .topp .logo-details{
   color: #fff;

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="css/k_form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+<body>
+    
+    <%- include("nav") -%>
+    <div class="wrapper">
+        <div class="title">
+          Resume Builder
+        </div>
+        
+        <form method="post" autocomplete="off" name="google-sheet" id="postform">
+        <div class="form ">
+
+          <div class="note">
+            <p>All fields marked with * are mandatory</p>
+         </div>
+         <div class="inputfield">
+          <label>Profile Picture</label>
+          <input type="file" class="textarea" name="c-address" id="add"/>
+       </div> 
+           <div class="inputfield">
+              <label>First Name  <span class="note">*</span></label>
+              <input type="email" name="email" class="input" id="email" placeholder="you@yourdomain.com" required/>
+           </div>  
+            <div class="inputfield">
+              <label>Last Name</label>
+              <input type="text" name="jobtitle" class="input" id="jobtitle"/>
+           </div>  
+            <div class="inputfield">
+              <label>Phone Number<span class="note">*</span></label>
+              <input type="text" name="jobloc" class="input" id="jobloc"/>
+           </div>  
+
+         <div class="inputfield">
+          <label>Email Address</label>
+          <input type="text" name="Salary" class="input" id="salary" required/>
+       </div> 
+
+           <div class="inputfield">
+            <label>City<span class="note">*</span></label>
+            <label>State/Provience<span class="note">*</span></label>
+            <input type="text" class="textarea" name="Job-Description" id="desc" required/>
+           </div> 
+         <div class="inputfield">
+          <label>Qualification<span class="note">*</span></label>
+          <input type="text" class="textarea" name="Company-name" id="cname"/>
+       </div> 
+         <div class="inputfield">
+          <label>Past Experience<span class="note">*</span></label>
+          <input type="text" class="textarea" name="Company-GST-number" id="gst"/>
+       </div> 
+       <div class="inputfield">
+        <label>Key Skill<span class="note">*</span></label>
+        <input type="text" class="textarea" name="c-url" id="url"/>
+     </div> 
+     <div class="inputfield">
+      <label>Portfolio</label>
+      <input type="file" class="textarea" name="c-address" id="add"/>
+   </div> 
+          <div class="inputfield">
+            <input type="submit" name="submit" value="Submit" class="btn">
+          </div>
+
+        </div>
+    </form>
+</div>
+<%- include("footer") -%>
+    <div class="app">
+      <a href="https://wa.me/+918178346064"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</body>
+</html>

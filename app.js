@@ -183,7 +183,18 @@ app.get('/cart/:id',async(req,res)=>{
       });
       return ;
 });
-
+app.get('/resumebuilder',(req,res)=>{
+    res.render("resumebuilder",{msg:msg,icon:icon});
+});
+app.get('/faq',(req,res)=>{
+    res.render("faq",{msg:msg,icon:icon});
+});
+app.get('/skill',(req,res)=>{
+    res.render("skill",{msg:msg,icon:icon});
+});
+app.get('/contact',(req,res)=>{
+    res.render("contact",{msg:msg,icon:icon});
+});
 
 app.listen(PORT, () => {
     console.log(`port is running successfully at server ${PORT} !`);
