@@ -1,82 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        <link rel="stylesheet" href="css/faq.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/nav.css">
-        <link rel="stylesheet" href="css/button.css">
-        <link rel="stylesheet" href="css/footer.css">
-    
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/footer.css">
+
 </head>
+
 <body>
-    
+
     <%- include("nav") -%>
-    <div id="container">
-        <h1>FAQ (Frequently Ask Questions)</h1>
-        <div class="title"><h3>These are the questions our customers ask frequently</h3></div>
-        
-        <ul class="faq">
-            <li class="q"><i class="ion-chevron-right"></i>What is KarigarsIndia.com ?</li>
-            <li class="a">KarigarsIndia is a website for posting and getting jobs for labour, plumber, electrician, painter, Mistri, etc. The people who find the job on road that will develop the relation for worker and employer with this website.</li>
-            
-            <li class="q"><i class="ion-chevron-right"></i>What they can find on this website?</li>
-            <li class="a">In this website you can see the other companies detail, and worker detail. In this website they can create the resume for free. The employer can post the job free.</li>
-            
-            <li class="q"><i class="ion-chevron-right"></i>How to register in karigarsIndia.com as a worker?</li>
-            <li class="a">In the header you will see the register and login options when you click the register option.
-<br>
-                Step 1:- Select account type, select karigar in it.
-                <br>             
-                Step 2:- Enter the detail like, first name, last name, qualification, experience, key skills, etc.
-                <br>
-                Step 3:- Click on Register button.
-                <br>
-                And login and see all the details.</li>
-            
-          <li class="q"><i class="ion-chevron-right"></i>How to register in karigarsIndia.com as employer?</li>
-            <li class="a">Do the following steps
-<br>
-                Step 1 :- Select the company option.
-                <br>
-                Step 2:- Fill all the details in the registration.
-                <br>
-                Step 3 :- Click register and done.
-                <br>
-                Then you can post all the job you find the perfect worker for you job.</li>
-            
-            <li class="q"><i class="ion-chevron-right"></i>What you can see in the website?</li>
-            <li class="a">In  the website you can see the detail of worker and companies in this website and you can create account for job post and job apply.</li>
-            
-        </ul>
-    </div>
-    <br>
-    <br>
-    <%- include("footer") -%>
-    <div class="app">
-      <a href="https://wa.me/+918178346064"><i class="fab fa-whatsapp"></i></a>
-    </div>
+        <div id="container">
+            <h1>FAQ (Frequently Ask Questions)</h1>
+
+            <ul class="faq">
+                <li class="q"><i class="ion-chevron-right"></i>What is KarigarsIndia.com ?</li>
+                <li class="a">KarigarsIndia is a website for posting and getting jobs for labour, plumber, electrician, painter, Mistri, etc. The people who find the job on road that will develop the relation for worker and employer with this website.</li>
+
+                <li class="q"><i class="ion-chevron-right"></i>What they can find on this website?</li>
+                <li class="a">In this website you can see the other companies detail, and worker detail. In this website they can create the resume for free. The employer can post the job free.</li>
+
+                <li class="q"><i class="ion-chevron-right"></i>How to register in karigarsIndia.com as a worker?</li>
+                <li class="a">In the header you will see the register and login options when you click the register option.
+                    <br> Step 1:- Select account type, select karigar in it.
+                    <br> Step 2:- Enter the detail like, first name, last name, qualification, experience, key skills, etc.
+                    <br> Step 3:- Click on Register button.
+                    <br> And login and see all the details.</li>
+
+                <li class="q"><i class="ion-chevron-right"></i>How to register in karigarsIndia.com as employer?</li>
+                <li class="a">Do the following steps
+                    <br> Step 1 :- Select the company option.
+                    <br> Step 2:- Fill all the details in the registration.
+                    <br> Step 3 :- Click register and done.
+                    <br> Then you can post all the job you find the perfect worker for you job.</li>
+
+                <li class="q"><i class="ion-chevron-right"></i>What you can see in the website?</li>
+                <li class="a">In the website you can see the detail of worker and companies in this website and you can create account for job post and job apply.</li>
+
+            </ul>
+        </div>
+        <br>
+        <br>
+        <%- include("footer") -%>
+            <div class="app">
+                <a href="https://wa.me/+918178346064"><i class="fab fa-whatsapp"></i></a>
+            </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script>
-    var action="click";
-var speed="500";
+    var action = "click";
+    var speed = "500";
 
-$(document).ready(function() {
-    // Question handler
-    $('li.q').on(action, function() {
-        // Get next element
-        $(this).next()
-            .slideToggle(speed)
-        // Select all other answers
+    $(document).ready(function() {
+        // Question handler
+        $('li.q').on(action, function() {
+            // Get next element
+            $(this).next()
+                .slideToggle(speed)
+                // Select all other answers
                 .siblings('li.a')
-                    .slideUp();
+                .slideUp();
+        });
     });
-});
 </script>
+
 </html>

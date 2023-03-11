@@ -1,12 +1,14 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: sans-serif;
 }
-#navbar{
+
+#navbar {
     position: relative;
     top: 0;
     left: 0;
@@ -14,10 +16,11 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 5px 15px;
+    padding: 13px 15px;
     font-size: 14px;
 }
-#navbar a{
+
+#navbar a {
     text-decoration: none;
 }
 
@@ -32,63 +35,70 @@ body{
     /* background-color: #178415; */
     background-color: #2B5430;
 }
-.logo{
+
+.logo {
     cursor: pointer;
     font-style: italic;
     font-size: 1.8rem;
     color: white;
 }
-.sublogo{
+
+.sublogo {
     cursor: pointer;
     font-style: italic;
     color: white;
     text-align: center;
 }
-#navbar ul{
+
+#navbar ul {
     display: flex;
     list-style: none;
 }
-.item a{
+
+.item a {
     text-decoration: none;
     color: white;
     padding: 0 10px;
 }
-.Search{
+
+.Search {
     width: 300px;
     height: 40px;
 }
-#logout{
+
+#logout {
     /* display: none; */
 }
-@media(max-width: 991px){
- #navbar{
-     padding: 20px 50px;
-     flex-direction: column;
- }
- #navbar ul{
-     display: flex;
-     justify-content: center;
-     flex-wrap: wrap;
-     margin: 10px 0;
- }
- .Search{
+
+@media(max-width: 991px) {
+    #navbar {
+        padding: 20px 50px;
+        flex-direction: column;
+    }
+    #navbar ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 10px 0;
+    }
+    .Search {
         position: relative;
         width: calc(100%-20px);
         height: 40px;
     }
 }
+
 @media(max-width: 600px) {
-    #navbar{
+    #navbar {
         padding: 10px;
     }
-    .Search{
+    .Search {
         position: relative;
         width: calc(100%-20px);
         height: 40px;
     }
 }
 
-.sbar a{
-    color: white ;
-
+.sbar a {
+    color: white;
 }
