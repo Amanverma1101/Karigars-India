@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  section {
+    padding: 40px 0;
+  }
+  .section_title {
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+      margin-top: 10px;
+      margin-bottom: 20px;
+  }
+  
+  .reviews {
+      background-color: #0a7f47;
+      color: #fff;
+  }
+  
+  .reviews .slick-slider {
+      z-index: 9;
+  }
+  
+  .reviews .sin-testiImage img {
+      -webkit-transform: scale(0.7, 0.7);
+              transform: scale(0.7, 0.7);
+      -webkit-transition: all 1s;
+      transition: all 1s;
+      border-radius: 50%;
+      cursor: pointer;
+      display: block;
+      margin: 15px auto;
+  }
+  
+  .reviews .sin-testiImage.slick-current img {
+      -webkit-transform: scale(1, 1);
+              transform: scale(1, 1);
+      -webkit-transition: all 1s;
+      transition: all 1s;
+  }
+  
+  .reviews .reviews-slider {
+      position: relative;
+  }
+  
+  .reviews .reviews-slider .icon-angle-left,
+  .reviews .reviews-slider .icon-angle-right {
+      position: absolute;
+      top: 40%;
+  }
+  
+  .reviews .reviews-slider .icon-angle-left:hover,
+  .reviews .reviews-slider .icon-angle-right:hover {
+      background-color: #f92762;
+      color: #fff;
+  }
+  
+  .reviews .reviews-slider .icon-angle-left {
+      left: 20px;
+      z-index: 999;
+  }
+  
+  .reviews .reviews-slider .icon-angle-right {
+      right: 20px;
+  }
+  
+  .reviews .reviews-text-slider h2 {
+      color: #ffffff;
+      font-family: MyriadPro-Bold;
+  }
+  
+  .reviews .reviews-text-slider {
+      margin: auto;
+      padding: 0;
+      position: relative;
+      text-align: center;
+      z-index: 9;
+  }
+  
+  .reviews .sin-testiText {
+      outline: none;
+      text-align: center;
+  }
+  
+  .reviews .sin-testiText p {
+      margin-top: 22px;
+      color: #fff;
+      line-height: 24px;
+      font-family: MyriadPro-Regular;
+  }
+  
+  .reviews .grid-padding-x > .cell:nth-child(2) {
+      position: relative;
+  }
+  
+  .reviews .grid-padding-x > .cell:nth-child(2) .quotes {
+      position: absolute;
+      width: 100%;
+  }
+  
+  .reviews .grid-padding-x > .cell:nth-child(2) .quotes::after,
+  .reviews .grid-padding-x > .cell:nth-child(2) .quotes::before {
+      content: ',,';
+      position: absolute;
+      font-size: 56px;
+      color: #fff200;
+      font-family: 'Times New Roman',
+   serif;
+      font-weight: 700;
+      line-height: 0;
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+      display: block;
+      z-index: 999;
+  }
+  
+  .reviews .grid-padding-x > .cell:nth-child(2) .quotes::before {
+      top: 70px;
+      left: -10px;
+  }
+  
+  .reviews .grid-padding-x > .cell:nth-child(2) .quotes::after {
+      top: 132px;
+      right: 20px;
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+  }
+  

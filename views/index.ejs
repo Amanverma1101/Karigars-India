@@ -21,11 +21,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/lastsec.css">
+    <!-- <link rel="stylesheet" href="css/lastsec.css"> -->
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/clients.css">
     <link rel="stylesheet" href="css/internship.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/reviews.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.4-rc1/css/foundation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
 
 
 </head>
@@ -215,46 +218,9 @@
   </div>
 </div>
 
-<h2 class="h-primary clss centerr ">Happy Customers</h2>
-<div class="container">
 
-  <div class="veiw-box">
-      <div id="testimonials">
-          
-          <div class="user">
-              <img src="images/7.jpg" alt="">
-              <p>Simple and easy to apply, nice experience.</p>
-              <h3>Himanshu</h3>
-              <h4 class="col-white">Front end Developer, TCS, Mumbai</h4>
-          </div>
-          
-          <div class="user space">
-              <img src="images/8.jpg" alt="">
-              <p>Hiring from here is way easier then other. I am very happy with their work.</p>
-              <h3>Sourav</h3>
-              <h4 class="col-white">Team Head, Wipro</h4>
-          </div>
-          
-          <div class="user">
-              <img src="images/9.jpg" alt="">
-              <p>Good for hiring people they have the best data analysis for post your are searching for, happy by the work.</p>
-              <h3>Gourav</h3>
-              <h4 class="col-white">Manager, Affinity</h4>
-          </div>
-          
-          
-      </div>
-      
-      <div class="controls">
-          <span id="control1"></span>
-          <span id="control2" class="activ"></span>
-          <span id="control3"></span>
-      </div>
-      
-  </div>
-</div>
 <br>
-
+<%- include("review") -%>
 <%- include("footer") -%>
     <div class="app">
       <a href="https://wa.me/+918178346064"><i class="fab fa-whatsapp"></i></a>
@@ -293,6 +259,10 @@
     <!----------- carouseljs -------->
 
 </body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js'></script>
+<script src="js/review.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/lastsec.js"></script>
+
 </html>
