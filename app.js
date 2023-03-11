@@ -195,6 +195,9 @@ app.get('/skill',(req,res)=>{
 app.get('/contact',(req,res)=>{
     res.render("contact",{msg:msg,icon:icon});
 });
+app.get('/internship',(req,res)=>{
+    res.render("internship",{msg:msg,icon:icon});
+});
 
 app.listen(PORT, () => {
     console.log(`port is running successfully at server ${PORT} !`);
