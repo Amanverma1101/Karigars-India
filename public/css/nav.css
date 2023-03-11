@@ -20,7 +20,8 @@ body{
 #navbar a{
     text-decoration: none;
 }
-#navbar::before{
+
+#navbar::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -29,8 +30,7 @@ body{
     height: 100%;
     z-index: -1;
     /* background-color: #178415; */
-    background-color: #01411C;
-    opacity: 0.8;
+    background-color: #2B5430;
 }
 .logo{
     cursor: pointer;

@@ -5,13 +5,14 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
-footer{
+footer {
   /* position: fixed; */
-  background: #01411C;
+  background: #172F1A;
   width: 100%;
   bottom: 0;
   left: 0;
 }
+
 footer::before{
   content: '';
   position: absolute;
@@ -158,9 +159,9 @@ footer .content .link-boxes .box{
 .input-box input[type="button"]:hover{
   opacity: 1;
 }
-footer .bottom-details{
+footer .bottom-details {
   width: 100%;
-  background: #355E3B;
+  background: #2E5632;
 }
 footer .bottom-details .bottom_text{
   max-width: 1250px;
