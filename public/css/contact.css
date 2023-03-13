@@ -234,7 +234,8 @@
 }
 .home-el {
     /* background-color: rgba(11, 237, 146, 0.486); */
-    background: url('https://thetoolkit.me/wp-content/uploads/2019/07/contact-2860030_1920-1800x900.jpg') no-repeat center center/cover;
+    background: url('https://media.istockphoto.com/id/1255985762/vector/contact-us-green-3d-button-with-hand-pointer-clicking-white-background-vector.jpg?s=612x612&w=0&k=20&c=std05Pypbc5RWXPXQvInhVy3caZDma5s-dPFNmOqhj4=') no-repeat center center/cover;
     padding-top: 9rem;
     padding-bottom: 9rem;
+    height: 80%;
 }
