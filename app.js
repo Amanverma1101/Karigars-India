@@ -198,6 +198,9 @@ app.get('/contact',(req,res)=>{
 app.get('/internship',(req,res)=>{
     res.render("internship",{msg:msg,icon:icon});
 });
+app.get('/blogs',(req,res)=>{
+    res.render("blogs",{msg:msg,icon:icon});
+});
 
 app.listen(PORT, () => {
     console.log(`port is running successfully at server ${PORT} !`);
