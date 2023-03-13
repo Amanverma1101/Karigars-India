@@ -26,7 +26,7 @@ a {
   background-color: whitesmoke;
 }
 
-.container {
+.containerrr {
 /*   max-width: ; */
   height: 100%;
   overflow: hidden;
@@ -37,7 +37,7 @@ a {
   padding: 3rem 0;
 }
 
-.container .deco {
+.containerrr .deco {
   height: 3rem;
   width: 23rem;
   filter: brightness(120%);
@@ -119,7 +119,7 @@ a {
     width: 40rem;
   }
 
-  .container {
+  .containerrr {
     padding: 1%;
   }
 
