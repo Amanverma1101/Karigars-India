@@ -1,86 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
     <title>Resume Builder</title>
-    <link rel="stylesheet" href="css/k_form.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/skilldev.css">
 
-</head>
-<body>
-    
+  </head>
+  <body>
     <%- include("nav") -%>
-    <div class="wrapper">
-        <div class="title">
-          Resume Builder
+    <div class="stl">
+    <div class="container">
+      <div class="title">Resume Builder</div>
+      <br>
+      <form action="">
+        <div class="account-details">
+        <div class="form-group">
+          <label class="form-title" for="">Profile Picture</label>
+          <input type="file" placeholder="Your Profile Picture" required>
         </div>
-        
-        <form method="post" autocomplete="off" name="google-sheet" id="postform">
-        <div class="form ">
-
-          <div class="note">
-            <p>All fields marked with * are mandatory</p>
-         </div>
-         <div class="inputfield">
-          <label>Profile Picture</label>
-          <input type="file" class="textarea" name="c-address" id="add"/>
-       </div> 
-           <div class="inputfield">
-              <label>First Name  <span class="note">*</span></label>
-              <input type="email" name="email" class="input" id="email" placeholder="you@yourdomain.com" required/>
-           </div>  
-            <div class="inputfield">
-              <label>Last Name</label>
-              <input type="text" name="jobtitle" class="input" id="jobtitle"/>
-           </div>  
-            <div class="inputfield">
-              <label>Phone Number<span class="note">*</span></label>
-              <input type="text" name="jobloc" class="input" id="jobloc"/>
-           </div>  
-
-         <div class="inputfield">
-          <label>Email Address</label>
-          <input type="text" name="Salary" class="input" id="salary" required/>
-       </div> 
-
-           <div class="inputfield">
-            <label>City<span class="note">*</span></label>
-            <label>State/Provience<span class="note">*</span></label>
-            <input type="text" class="textarea" name="Job-Description" id="desc" required/>
-           </div> 
-         <div class="inputfield">
-          <label>Qualification<span class="note">*</span></label>
-          <input type="text" class="textarea" name="Company-name" id="cname"/>
-       </div> 
-         <div class="inputfield">
-          <label>Past Experience<span class="note">*</span></label>
-          <input type="text" class="textarea" name="Company-GST-number" id="gst"/>
-       </div> 
-       <div class="inputfield">
-        <label>Key Skill<span class="note">*</span></label>
-        <input type="text" class="textarea" name="c-url" id="url"/>
-     </div> 
-     <div class="inputfield">
-      <label>Portfolio</label>
-      <input type="file" class="textarea" name="c-address" id="add"/>
-   </div> 
-          <div class="inputfield">
-            <input type="submit" name="submit" value="Submit" class="btn">
+      </div>
+        <div class="user-details">
+            <div class="form-group">
+              <label class="form-title" for="">First name</label>
+              <input type="text" placeholder="Enter first name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-title" for="">Middle name</label>
+              <input type="text" placeholder="Enter middle name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-title" for="">Last name</label>
+              <input type="text" placeholder="Enter last name" required>
+            </div>
           </div>
 
-        </div>
-    </form>
+        <div class="account-details">
+            <div class="form-group">
+              <label class="form-title" for="">Email</label>
+              <input type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label class="form-title" for="">Phone Number</label>
+              <input type="tel" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+              <label class="form-title" for="">City</label>
+              <input type="tel" placeholder="Enter your city" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-title" for="">State/Provience</label>
+              <input type="tel" placeholder="Enter your state" required>
+            </div>
+        
+
+            <div class="form-group">
+              <label class="form-title" for="">Qualification</label>
+              <input type="text" placeholder="Enter your qualification" required>
+            </div>
+            <div class="form-group">
+                <label class="form-title" for=""> Past Experience</label>
+                <input type="text" placeholder="Enter your experience" required>
+              </div>
+              <div class="form-group">
+                <label class="form-title" for="">Key Skill</label>
+                <input type="text" placeholder="Enter your skill" required>
+              </div>
+              <div class="form-group">
+                <label class="form-title" for="">Portfolio</label>
+                <input type="file" placeholder="Your portfolio" required>
+              </div>
+          </div>
+          
+          <div class="button">
+            <input type="submit" value="Submit">
+          </div>
+      </form>
+    </div>
 </div>
 <%- include("footer") -%>
-    <div class="app">
-      <a href="https://wa.me/+918178346064"><i class="fab fa-whatsapp"></i></a>
-    </div>
-</body>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 
-.stl{
+  .stl{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,11 +174,3 @@
       overflow-y: scroll;
     }
   }
-
-  .home-el {
-    /* background-color: rgba(11, 237, 146, 0.486); */
-    background: url('https://img.freepik.com/free-photo/document-marketing-strategy-business-concept_53876-124269.jpg?w=996&t=st=1678711701~exp=1678712301~hmac=bdc16048906a23f185bedaa3f2a5d610e788c14cba9ee90d5981141356309648') no-repeat center center/cover;
-    padding-top: 9rem;
-    padding-bottom: 9rem;
-    height: 80%;
-}
