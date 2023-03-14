@@ -17,7 +17,7 @@ app.get('/login',(req,res)=>{
     res.render("login",{msg:msg,icon:icon});
 });
 app.get('/moblogin',(req,res)=>{
-    res.render("moblogin");
+    res.render("moblogin",{msg:msg,icon:icon});
 });
 app.get('/signup',(req,res)=>{
     res.render("signup",{msg:msg,icon:icon});

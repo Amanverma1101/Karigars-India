@@ -50,9 +50,11 @@
         <a class="btn" onclick="changeLanguage('hin')">हिंदी</a>
         <a class="btn">English</a>
     </div>
+    <% if(msg !==""){ %>
     <div class="menu-item menu-item-a active" id="logout">
         <%= msg %>
     </div>
+    <% }%>
 </nav>
 
 <script type="module">

@@ -3,11 +3,16 @@
 <head>
 <meta charset="utf-8">
 <title>Number verification with OTP</title>
+<link rel="stylesheet" href="css/nav.css" />
+<link rel="stylesheet" href="css/footer.css"/>
+<link rel="stylesheet" href="css/internship.css"/>
+<link rel="stylesheet" href="css/button.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <style>
 .containerr {
 		width: 302px;
 		height: 175px;
-		position: absolute;
+		position: relative;
 		left: 0px;
 		right: 0px;
 		top: 0px;
@@ -19,7 +24,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height:100vh;
+        height:90vh;
     }
     .back{
        height: 300px;
@@ -49,8 +54,13 @@
 		background-color: #01411C;
 		color: rgb(255, 255, 255);
 	}
+	#number, #verificationcode{
+		width: 100%;
+		height: 40px;
+	}
 	.p-conf, .n-conf {
-		width: calc(100% - 22px);
+		width: 100%;
+		height: 40px;
 		border: 2px solid green;
 		border-radius: 4px;
 		padding: 8px 10px;
@@ -59,6 +69,8 @@
 		display: none;
 	}
 	.n-conf {
+		width: 100%;
+		height: 40px;
 		border-color: red;
 		background-color: rgba(255, 0, 4, 0.5);
 	}
@@ -69,11 +81,14 @@
 		color: #01411C;
 		text-transform: uppercase;
 		text-align: center;
+		margin-top: 27px;
     }
 </style>
 </head>
 
 <body>
+
+	<%- include("nav") -%>
 	<div class="backk">
 		<div class="back">
 		
@@ -96,6 +111,8 @@
 		</div>
 		</div>
 	</div>
+
+	<%- include("footer") -%>
 <!--	add firebase SDK-->
 <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth-compat.js"></script>
@@ -135,7 +152,7 @@ function codeverify(){
 		document.getElementsByClassName('p-conf')[0].style.display = 'block';
 		document.getElementsByClassName('n-conf')[0].style.display = 'none';
 		
-		// window.location.replace("/");
+		window.location.replace("/");
 	}).catch(function(){
 		document.getElementsByClassName('p-conf')[0].style.display = 'none';
 		document.getElementsByClassName('n-conf')[0].style.display = 'block';
