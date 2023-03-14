@@ -42,7 +42,7 @@ body {
 }
 .home-el {
     /* background-color: rgba(11, 237, 146, 0.486); */
-    background: url('https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019821_960_720.jpg') no-repeat center center/cover;
+    background: url('') no-repeat center center/cover;
     padding-top: 9rem;
     padding-bottom: 9rem;
 }
