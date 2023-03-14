@@ -116,7 +116,7 @@ app.post('/kform',async (req,res)=>{
     };
     // console.log(userdata);
     await db.collection(`karigarss`).doc(userdata.email).set(userdata);
-    return res.redirect('/karigars',{msg:msg,icon:icon});
+    return res.redirect('/karigars');
 });
 app.get('/companies',async(req,res)=>{
     let snapshot = await db.collection(`companies`).get(); 
@@ -142,7 +142,7 @@ app.post('/cform',async(req,res)=>{
         };
         // console.log(userdata);
         await db.collection(`companies`).doc(compdata.email).set(compdata);
-        return res.redirect("/companies",{msg:msg,icon:icon});
+        return res.redirect("/companies");
 });
 app.get('/karigars',async(req,res)=>{
     let snapshot = await db.collection(`karigarss`).get(); 

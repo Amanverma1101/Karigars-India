@@ -29,7 +29,11 @@
           <div class="card">
       
           <div class="image">
-            <img src="<%= newListItems[i].url %>">
+            <% if(newListItems[i].url!==""){  %> 
+              <img src="<%= newListItems[i].url %>">
+              <% }else{ %> 
+                <img src="https://pbs.twimg.com/profile_images/1269571859726688256/7v8kf3xX_400x400.jpg">
+                <% } %> 
           </div>
           <div class="title">
             <h1><%= newListItems[i].title %></h1>
@@ -73,7 +77,11 @@
               <div class="card">
           
                 <div class="image">
-                  <img src="<%= newListItems[i].url %>">
+                  <% if(newListItems[i].url!==""){  %> 
+                    <img src="<%= newListItems[i].url %>">
+                    <% }else{ %> 
+                      <img src="https://pbs.twimg.com/profile_images/1269571859726688256/7v8kf3xX_400x400.jpg">
+                      <% } %> 
                 </div>
                 <div class="title">
                   <h1><%= newListItems[i].title %></h1>
@@ -114,7 +122,11 @@
               <div class="card">
           
                 <div class="image">
+                  <% if(newListItems[i].url!==""){  %> 
                   <img src="<%= newListItems[i].url %>">
+                  <% }else{ %> 
+                    <img src="https://pbs.twimg.com/profile_images/1269571859726688256/7v8kf3xX_400x400.jpg">
+                    <% } %> 
                 </div>
                 <div class="title">
                   <h1><%= newListItems[i].title %></h1>
@@ -157,7 +169,11 @@
                <div class="card">
           
                 <div class="image">
-                  <img src="<%= newListItems[i].url %>">
+                  <% if(newListItems[i].url!==""){  %> 
+                    <img src="<%= newListItems[i].url %>">
+                    <% }else{ %> 
+                      <img src="https://pbs.twimg.com/profile_images/1269571859726688256/7v8kf3xX_400x400.jpg">
+                      <% } %> 
                 </div>
                 <div class="title">
                   <h1><%= newListItems[i].title %></h1>
@@ -205,7 +221,11 @@
                <div class="card">
           
                 <div class="image">
-                  <img src="<%= newListItems[i].url %>">
+                  <% if(newListItems[i].url!==""){  %> 
+                    <img src="<%= newListItems[i].url %>">
+                    <% }else{ %> 
+                      <img src="https://pbs.twimg.com/profile_images/1269571859726688256/7v8kf3xX_400x400.jpg">
+                      <% } %> 
                 </div>
                 <div class="title">
                   <h1><%= newListItems[i].title %></h1>
