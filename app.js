@@ -162,7 +162,7 @@ app.post('/checkout',(req,res)=>{
       fprice=gstp;
     //   console.log(price);
     if(msg==="Logout"){
-        return res.render("finalcheckout",{price: price,gst: gstp});
+        return res.render("finalcheckout",{price: price,gst: gstp,msg:msg,icon:icon});
     }else{
         return res.render("notify");
     }
@@ -178,7 +178,7 @@ app.get('/cart/:id',async(req,res)=>{
     snap.forEach((doc) => {
         if(doc.id==email){
            emplist={...doc.data()};
-            return res.render("cart",{list: emplist});
+            return res.render("cart",{list: emplist,msg:msg,icon:icon});
         }
       });
       return ;

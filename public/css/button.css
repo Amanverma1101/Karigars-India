@@ -16,7 +16,7 @@
     padding: .5rem 1rem;
     margin: 0 0.4rem;
     font-weight: 600;
-    color:rgb(0, 104, 85);
+    color:rgb(0, 104, 85) !important;
     transition: .5s ease-in-out;
     border-radius: 1rem;
     cursor: pointer;
@@ -26,8 +26,8 @@
     padding: .5rem 1rem;
     margin: 0 0.4rem;
     font-weight: 600;
-    color: rgb(0, 104, 85);
-    background-color: white;
+    color: rgb(0, 104, 85) !important;
+    background-color: white !important;
     transition: .5s ease-in-out;
     border-radius: 1rem;
     cursor: pointer;
@@ -40,8 +40,8 @@
 .menu-item:hover,
 .menu-item:active {
     color: rgb(0, 104, 85);
-    background-color: white;
-    border-radius: 1rem;
+    background-color: white !important;
+    border-radius: 1rem !important;
 }
 
 .lang {
