@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Companies Form</title>
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-    <link rel="stylesheet" href="css/k_form.css">
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/k_form.css" />
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/internship.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+  <%- include("nav") -%>
+  <br>
     <div class="wrapper">
         <div class="title">
           Companies Registration Form
@@ -21,46 +28,46 @@
          </div>
            <div class="inputfield">
               <label>First Name  <span class="note">*</span></label>
-              <input type="text" name="fname" class="input" id="fname" required/>
+              <input type="text" placeholder="Your First Name" name="fname" class="input" id="fname" required/>
            </div>  
             <div class="inputfield">
               <label>Last Name</label>
-              <input type="text" name="lname" class="input" id="lname"/>
+              <input type="text" placeholder="Your Last Name" name="lname" class="input" id="lname"/>
            </div>  
            <div class="inputfield">
             <label>Designation</label>
-            <input type="text" name="designation" class="input" id="designation"/>
+            <input type="text" name="designation" placeholder="Designation" class="input" id="designation"/>
          </div>  
          <div class="inputfield">
             <label>Company Name  <span class="note">*</span></label>
-            <input type="text" class="textarea" name="company" id="company" required/>
+            <input type="text" class="textarea" placeholder="Company Name" name="company" id="company" required/>
            </div> 
            <div class="inputfield">
             <label>Work Location<span class="note">*</span></label>
-            <input type="text" class="textarea" name="loc" id="loc"/>
+            <input type="text" placeholder="Work Location" class="textarea" placeholder="" name="loc" id="loc"/>
          </div> 
            <div class="inputfield">
             <label>Company's GST Number</label>
-            <input type="text" class="textarea" name="gst" id="gst" required/>
+            <input type="text" class="textarea" placeholder="GST Number" name="gst" id="gst" required/>
            </div> 
 
          <div class="inputfield">
           <label>Phone Number  <span class="note">*</span></label>
-          <input type="text" name="phone" class="input" id="phone" minlength="10" maxlength="10" required/>
+          <input type="text" name="phone" class="input" placeholder="Phone Number" id="phone" minlength="10" maxlength="10" required/>
        </div> 
 
             <div class="inputfield">
               <label>Email Address</label>
-              <input type="email" name="email" class="input" id="email" value="<%= mailid %>" readonly="readonly"/>
+              <input type="email" name="email" class="input" placeholder="Email Address" id="email" value="<%= mailid %>" readonly="readonly"/>
            </div> 
 
            <div class="inputfield">
             <label>Address</label>
-            <input type="text" class="textarea" name="add" id="add"/>
+            <input type="text" class="textarea" placeholder="Address" name="add" id="add"/>
          </div> 
           <div class="inputfield">
             <label>Upload Image URL</label>
-            <input type="text" name="image_url" class="input" id="image_url"/>
+            <input type="text" name="image_url" placeholder="Image" class="input" id="image_url"/>
            </div> 
 
           <div class="inputfield">
@@ -74,7 +81,8 @@
         </div>
     </form>
 </div>
-          
+<br>
+<%- include("footer") -%>           
 
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
