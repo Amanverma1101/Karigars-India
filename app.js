@@ -24,9 +24,9 @@ app.get('/signup',(req,res)=>{
 });
 app.get('/postjob',(req,res)=>{
     if(msg==="Logout"){
-        return res.render("postjob");
+        return res.render("postjob",{msg:msg,icon:icon});
     }else{
-        return res.render("notify");
+        return res.render("notify",{msg:msg,icon:icon});
     }
 });
 app.get('/opportunity',(req,res)=>{
@@ -81,7 +81,7 @@ app.get("/profile",async(req,res)=>{
     snap.forEach((doc) => {
         if(doc.id==email){
            emplist={...doc.data()};
-            return res.render("profile",{list: emplist});
+            return res.render("profile",{list: emplist,msg:msg,icon:icon});
         }
       });
       return res.render("select",{msg:msg,icon:icon});
@@ -92,7 +92,7 @@ app.get('/select',(req,res)=>{
 });
 app.get('/kform',(req,res)=>{
     // console.log("reached");
-    res.render("k_form",{mailid: email});
+    res.render("k_form",{mailid: email,msg:msg,icon:icon});
 });
 app.post('/kform',async (req,res)=>{
     // console.log(req.body);
@@ -125,7 +125,7 @@ app.get('/companies',async(req,res)=>{
 });
 app.get('/cform',(req,res)=>{
     console.log("reached");
-    return res.render("cform",{mailid: email});
+    return res.render("cform",{mailid: email,msg:msg,icon:icon});
 });
 app.post('/cform',async(req,res)=>{
     const compdata = {

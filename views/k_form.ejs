@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karigars Form</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="css/k_form.css">
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/k_form.css" />
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/internship.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+  <%- include("nav") -%>
+  <br>
     <div class="wrapper">
         <div class="title">
           Karigar's Registration Form
@@ -20,11 +26,11 @@
          </div>
            <div class="inputfield">
               <label>First Name  <span class="note">*</span></label>
-              <input type="text" name="fname" class="input" id="fname" required/>
+              <input type="text" placeholder="Your First Name" name="fname" class="input" id="fname" required/>
            </div>  
             <div class="inputfield">
               <label>Last Name</label>
-              <input type="text" name="lname" class="input" id="lname"/>
+              <input type="text" name="lname" placeholder="Your Last Name" class="input" id="lname"/>
            </div>  
            
          <div class="inputfield">
@@ -40,25 +46,25 @@
 
          <div class="inputfield">
           <label>Phone Number  <span class="note">*</span></label>
-          <input type="text" name="phone" class="input" id="phone" minlength="10" maxlength="10" required/>
+          <input type="text" name="phone" class="input" placeholder="Phone Number" id="phone" minlength="10" maxlength="10" required/>
        </div> 
 
             <div class="inputfield">
               <label>Email Address</label>
-              <input type="email" name="email" class="input" id="email" value="<%= mailid %>" readonly="readonly"/>
+              <input type="email" name="email" class="input" placeholder="Your Email" id="email" value="<%= mailid %>" readonly="readonly"/>
            </div> 
 
            <div class="inputfield">
             <label>Full Address</label>
-            <input type="text" class="textarea" name="add" id="add"/>
+            <input type="text" class="textarea" placeholder="Your Address" name="add" id="add"/>
          </div> 
            <div class="inputfield">
             <label>City</label>
-            <input type="text" class="textarea" name="city" id="city"/>
+            <input type="text" class="textarea" placeholder="Your City" name="city" id="city"/>
          </div> 
            <div class="inputfield">
             <label>State</label>
-            <input type="text" class="textarea" name="state" id="state"/>
+            <input type="text" class="textarea" placeholder="Your State" name="state" id="state"/>
          </div> 
 
           <div class="inputfield">
@@ -82,29 +88,29 @@
          
           <div class="inputfield">
             <label>Key Skill  <span class="note">*</span></label>
-            <input type="text" class="textarea" name="skill" id="skill" required/>
+            <input type="text" class="textarea" placeholder="Your Key Skill" name="skill" id="skill" required/>
            </div> 
 
            <div class="inputfield">
             <label>Price (per day)  <span class="note">*</span></label>
-            <input type="number" class="textarea" name="price" id="price" required/>
+            <input type="number" class="textarea" placeholder="Your price" name="price" id="price" required/>
            </div> 
 
           <div class="inputfield">
               <label>Experience (in years)</label>
-              <input type="number" class="textarea" name="exp" id="exp"/>
+              <input type="number" class="textarea" placeholder="Your Experience" name="exp" id="exp"/>
            </div> 
           <div class="inputfield">
               <label>Qualification</label>
-              <input type="text" class="textarea" name="qualification" id="qualification"/>
+              <input type="text" class="textarea"  placeholder="Your Qualification" name="qualification" id="qualification"/>
            </div> 
           <div class="inputfield">
             <label>PIN Code  <span class="note">*</span></label>
-            <input type="number" name="postal" class="input" id="postal" minlength="6" maxlength="6" required/>
+            <input type="number" name="postal"  placeholder="Your Pin Code" class="input" id="postal" minlength="6" maxlength="6" required/>
            </div> 
           <div class="inputfield">
             <label>Upload Image URL</label>
-            <input type="text" name="image_url" class="input" id="image_url"/>
+            <input type="text" name="image_url"  placeholder="Image" class="input" id="image_url"/>
            </div> 
           
           <div class="inputfield">
@@ -118,7 +124,9 @@
         </div>
     </form>
 </div>
-          
+<br>
+
+<%- include("footer") -%>         
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
