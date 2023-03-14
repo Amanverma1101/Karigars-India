@@ -83,7 +83,8 @@
     var request = new XMLHttpRequest(); 
     request.open("POST", '/signout', true); 
     request.setRequestHeader("Content-Type","application/json; charset=UTF-8"); 
-    request.send(""); // window.location.replace("/"); 
+    request.send(""); 
+    window.location.replace("/"); 
 }).catch((error) => { // An error happened. 
     console.log('An error happened.'); }); }); 
     //----- End
