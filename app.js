@@ -77,14 +77,18 @@ app.get("/reset",(req,res)=>{
 });
 app.get("/profile",async(req,res)=>{
     var email = String(profemail);
+    let check=0;
     const snap = await db.collection(`karigarss`).get();
     snap.forEach((doc) => {
         if(doc.id==email){
+            check=1;
            emplist={...doc.data()};
             return res.render("profile",{list: emplist,msg:msg,icon:icon});
         }
       });
+      if(check==0){
       return res.render("select",{msg:msg,icon:icon});
+      }
 });
 app.get('/select',(req,res)=>{
     console.log("reached");
@@ -127,6 +131,24 @@ app.get('/cform',(req,res)=>{
     console.log("reached");
     return res.render("cform",{mailid: email,msg:msg,icon:icon});
 });
+app.post('/postjob',async(req,res)=>{
+    const newjobdata = {
+        cname: req.body.cname,
+        email: req.body.email,
+        salary: req.body.salary,
+        add: req.body.cadd,
+        url: req.body.curl,
+        desc: req.body.desc,
+        joblo: req.body.jobloc,
+        jobcategory: req.body.jobcategory,
+        jobtype: req.body.jobtype,
+        gst: req.body.cgst,
+        jobtitle: req.body.jobtitle
+    };
+    if(newjobdata.url===""){newjobdata.url="https://etimg.etb2bimg.com/photo/91912875.cms";}
+    await db.collection(`postjob`).doc(newjobdata.email).set(newjobdata);
+    return res.redirect("/opportunity");
+});
 app.post('/cform',async(req,res)=>{
     const compdata = {
         fname: req.body.fname,
@@ -140,7 +162,7 @@ app.post('/cform',async(req,res)=>{
         loc: req.body.loc,
         url: req.body.image_url,
         };
-        // console.log(userdata);
+        console.log(compdata);
         await db.collection(`companies`).doc(compdata.email).set(compdata);
         return res.redirect("/companies");
 });
@@ -160,7 +182,6 @@ app.post('/checkout',(req,res)=>{
       const price = req.body.fprice;
       const gstp = req.body.gstprice;
       fprice=gstp;
-    //   console.log(price);
     if(msg==="Logout"){
         return res.render("finalcheckout",{price: price,gst: gstp,msg:msg,icon:icon});
     }else{
