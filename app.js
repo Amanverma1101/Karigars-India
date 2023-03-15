@@ -122,6 +122,42 @@ app.post('/kform',async (req,res)=>{
     await db.collection(`karigarss`).doc(userdata.email).set(userdata);
     return res.redirect('/karigars');
 });
+app.post('/iform',async (req,res)=>{
+    // console.log(req.body);
+    const userdata = {
+    fname: req.body.fname,
+    mname: req.body.mname,
+    lname: req.body.lname,
+    email: req.body.email,
+    phone: req.body.phone,
+    college: req.body.college,
+    qualify: req.body.qualify,
+    exp: req.body.exp,
+    pexp: req.body.pexp,
+    question: req.body.question,
+    moreabt: req.body.moreabt,
+    };
+    // console.log(userdata);
+    await db.collection(`internship`).doc(userdata.email).set(userdata);
+    return res.redirect('/');
+});
+app.post('/sform',async (req,res)=>{
+    // console.log(req.body);
+    const userdata = {
+    fname: req.body.fname,
+    mname: req.body.mname,
+    lname: req.body.lname,
+    email: req.body.email,
+    phone: req.body.phone,
+    qualify: req.body.qualify,
+    exp: req.body.exp,
+    pexp: req.body.pexp,
+    question: req.body.question,
+    };
+    // console.log(userdata);
+    await db.collection(`skilldevelopment`).doc(userdata.email).set(userdata);
+    return res.redirect('/');
+});
 app.get('/companies',async(req,res)=>{
     let snapshot = await db.collection(`companies`).get(); 
     let clist = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
