@@ -135,6 +135,7 @@ form input[type="radio"]{
 form .button{
   height: 45px;
   margin: 45px 0;
+  cursor: pointer;
 }
 
 form .button input{
@@ -148,6 +149,7 @@ form .button input{
   border-radius: 5px;
   letter-spacing: 1px;
   background: #01411C;
+  cursor: pointer;
 }
 
 form .button input::hover{

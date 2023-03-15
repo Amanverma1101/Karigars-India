@@ -2,11 +2,7 @@ body{
     background-color:#a6a3a3;
     font-family: 'Montserrat', sans-serif;
   }
-  .page-header{
-    /* background-color:#0e2f44;
-    height:100px;
-    margin:0px; */
-  }
+  
   .profile-container{
     width:40%;
     margin:auto;
@@ -24,7 +20,7 @@ body{
   }
   .user-company{
     font-weight:bold;
-    color:#5ad45c;
+    color:#2B5430;
   }.more-info{
     background-color:#e5e5e5;
     border-bottom:#ccc 1px solid ;
