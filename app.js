@@ -28,9 +28,6 @@ app.get('/pop',(req,res)=>{
 app.get('/cpop',(req,res)=>{
     res.render("cpop",{msg:msg,icon:icon});
 });
-app.get('/spop',(req,res)=>{
-    res.render("spop",{msg:msg,icon:icon});
-});
 app.get('/postjob',(req,res)=>{
     if(msg==="Logout"){
         return res.render("postjob",{msg:msg,icon:icon});
@@ -165,7 +162,7 @@ app.post('/sform',async (req,res)=>{
     };
     // console.log(userdata);
     await db.collection(`skilldevelopment`).doc(userdata.email).set(userdata);
-    return res.redirect('/spop');
+    return res.redirect('/');
 });
 app.get('/companies',async(req,res)=>{
     let snapshot = await db.collection(`companies`).get(); 

@@ -1,7 +1,10 @@
-#client-section{
+#client-section {
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
-#client-section::before{
+
+#client-section::before {
     content: "";
     position: absolute;
     background-color: aliceblue;
@@ -10,7 +13,8 @@
     z-index: -1;
     opacity: 0.3;
 }
-.clients{
+
+.clients {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -19,28 +23,28 @@
     overflow: hidden;
 }
 
-.clients .client-item img{
+.clients .client-item img {
     display: inline-flex;
-    height: 120px;
-    width: 120px;
-    margin: 5px 60px 5px; 
-    border-radius: 20%;   
+    height: 180px;
+    width: 180px;
+    margin: 5px 60px 5px;
+    border-radius: 20%;
 }
 
-.clss{
+.clss {
     font-size: 2.8rem;
     padding: 12px;
     font-family: 'Acme', sans-serif;
     text-align: center;
-   }
+}
 
-   .description{
+.description {
     font-size: 16px;
     text-align: center;
     padding: 0px 10px 5px;
-    margin: 2px 80px 10px 60px; 
-   }
+    margin: 2px 80px 10px 60px;
+}
 
-   .intern-heading{
+.intern-heading {
     text-align: center;
-   }
+}
