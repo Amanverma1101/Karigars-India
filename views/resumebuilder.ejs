@@ -2,7 +2,7 @@
   <head>
     <title>Resume Builder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/resumebuilder.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
@@ -12,76 +12,92 @@
   </head>
   <body>
     <%- include("nav") -%>
-    <div class="stl">
-    <div class="container">
-      <div class="title">Resume Builder</div>
-      <br>
-      <form action="">
-        <div class="account-details">
+<div class="body">
+    <div id="javascript_header"></div>
+    <form>
+      <div class="form__header">
+        <h1>Build Your Resume</h1>
+        <p>Enter the fields below to generate an html resume</p>
+      </div>
+    
+      <h2>Personal Details</h2>
+    
+      <div class="form-group">
+        <label for="name">Full Name <span>*</span></label>
+        <input type="text" name="name" id="name" placeholder="Robert Norman Ross">
+        <div id="name__error" class="error"></div>
+      </div>
+    
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" placeholder="4059 Mt Lee Dr. Hollywood, CA 90068">
+      </div>
+    
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone" placeholder="+1  123 456 7890">
+      </div>
+    
+      <div class="form-group">
+        <label for="email">Email <span>*</span></label>
+        <input type="text" name="email" id="email" placeholder="example@mail.com">
+        <div id="email__error" class="error"></div>
+      </div>
+    
+      <div class="form-group">
+        <label for="about">About You</label>
+        <textarea name="about" id="about"
+                  placeholder="Three or four sentences about your personality, work ethic, interests, and/or more"></textarea>
+      </div>
+    
+      <div class="form-group">
+        <label for="career">Career Objectives</label>
+        <textarea name="career" id="career"
+                  placeholder="One or two sentences about what you wish to accomplish in your career"></textarea>
+      </div>
+    
+      <div class="form-group">
+        <label for="education">Education</label>
+        <textarea name="education" id="education"
+                  placeholder="List any completed high school, college, or other educational programs"></textarea>
+      </div>
+    
+      <div class="line-break"></div>
+    
+      <h2>Work Experience</h2>
+    
+      <h3>Most Recent Job</h3>
+    
+      <div class="form-date-group">
         <div class="form-group">
-          <label class="form-title" for="">Profile Picture</label>
-          <input type="file" placeholder="Your Profile Picture" required>
+          <label for="job-1__start">Start Date</label>
+          <input type="date" name="job-1__start" id="job-1__start">
+        </div>
+        <div class="form-group">
+          <label for="job-1__end">End Date</label>
+          <input type="date" name="job-1__end" id="job-1__end">
         </div>
       </div>
-        <div class="user-details">
-            <div class="form-group">
-              <label class="form-title" for="">First name</label>
-              <input type="text" placeholder="Enter first name" required>
-            </div>
-            <div class="form-group">
-              <label class="form-title" for="">Middle name</label>
-              <input type="text" placeholder="Enter middle name" required>
-            </div>
-            <div class="form-group">
-              <label class="form-title" for="">Last name</label>
-              <input type="text" placeholder="Enter last name" required>
-            </div>
-          </div>
-
-        <div class="account-details">
-            <div class="form-group">
-              <label class="form-title" for="">Email</label>
-              <input type="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-              <label class="form-title" for="">Phone Number</label>
-              <input type="tel" placeholder="Enter your phone number" required>
-            </div>
-            <div class="form-group">
-              <label class="form-title" for="">City</label>
-              <input type="tel" placeholder="Enter your city" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-title" for="">State</label>
-              <input type="tel" placeholder="Enter your state" required>
-            </div>
-        
-
-            <div class="form-group">
-              <label class="form-title" for="">Qualification</label>
-              <input type="text" placeholder="Enter your qualification" required>
-            </div>
-            <div class="form-group">
-                <label class="form-title" for=""> Past Experience</label>
-                <input type="text" placeholder="Enter your experience" required>
-              </div>
-              <div class="form-group">
-                <label class="form-title" for="">Key Skill</label>
-                <input type="text" placeholder="Enter your skill" required>
-              </div>
-              <div class="form-group">
-                <label class="form-title" for="">Portfolio</label>
-                <input type="file" placeholder="Your portfolio" required>
-              </div>
-          </div>
-          
-          <div class="button">
-            <input type="submit" value="Submit">
-          </div>
-      </form>
+    
+      <div class="form-group">
+        <label for="job-1__details">Position Details</label>
+        <textarea name="job-1__details" id="job-1__details"></textarea>
+      </div>
+    
+      <div class="line-break"></div>
+    
+      
+      <div class="form-group">
+        <label for="references">References</label>
+        <textarea name="references" id="references"></textarea>
+      </div>
+    
+      <div class="line-break"></div>
+    
+      <input type="submit" value="Create Resume" id="create-resume">
+    </form>
     </div>
-</div>
 <%- include("footer") -%>
   </body>
+  <script src="js/resumebuilder.js"></script>
 </html>

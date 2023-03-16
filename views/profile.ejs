@@ -20,7 +20,28 @@
   <%- include("nav") -%>
       <%- include("profileinfo") -%>      
       <%- include("footer") -%>      
-      <script src="style.js">
-      </script>
+
 </body>
+    <!-- <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"; 
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"; 
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+        const firebaseConfig = { 
+            apiKey: "AIzaSyDoMlriG5ch5Vursn-T1N8MOOtifZlT6LU", 
+            authDomain: "designkoktail-f13c3.firebaseapp.com", 
+            projectId: "designkoktail-f13c3", 
+            storageBucket:"designkoktail-f13c3.appspot.com", 
+            messagingSenderId: "237876784229", 
+            appId: "1:237876784229:web:85cdaab127d61f2b0c6a8c" 
+        }; 
+        // Initialize Firebase 
+        const app = initializeApp(firebaseConfig); 
+        const analytics = getAnalytics(app); 
+        const auth = getAuth();
+
+        auth.onAuthStateChanged((user)=>{
+            console.log(user);
+        });
+
+  </script> -->
 </html>

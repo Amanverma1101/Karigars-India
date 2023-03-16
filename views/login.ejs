@@ -86,7 +86,7 @@
       
 	  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 	  // TODO: Add SDKs for Firebase products that you want to use
 	  // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -105,7 +105,6 @@
 	  const app = initializeApp(firebaseConfig);
 	  const analytics = getAnalytics(app);
 	  const auth = getAuth();
-	  console.log(app);
 
 	  
 
@@ -141,30 +140,8 @@
 		  });		  		  
 	  });
 	  //----- End
-
-	  //----- Logout code start	  
-	  document.getElementById("logout").addEventListener("click", function() {
-		  signOut(auth).then(() => {
-                // Sign-out successful.
-                console.log('Sign-out successful.');
-                alert('Sign-out successful.');
-                // document.getElementById('logout').style.display = 'none';
-                var request = new XMLHttpRequest();
-                request.open("POST", '/signout', true);
-                request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-                request.send();
-                window.location.replace("/");
-			}).catch((error) => {
-			  // An error happened.
-			  console.log('An error happened.');
-			});		  		  
-	  });
-	  //----- End
 	</script>
-<script src="js/googlelogin.js" type="module">
-    
-</script>
-
+<script src="js/googlelogin.js" type="module"></script>
 
 </html>
  

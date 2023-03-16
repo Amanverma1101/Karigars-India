@@ -60,7 +60,7 @@
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"; 
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"; 
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,    signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
      const firebaseConfig = { 
         apiKey: "AIzaSyDoMlriG5ch5Vursn-T1N8MOOtifZlT6LU", 
         authDomain: "designkoktail-f13c3.firebaseapp.com", 
@@ -73,8 +73,10 @@
     const app = initializeApp(firebaseConfig); 
     const analytics = getAnalytics(app); 
     const auth = getAuth();
-    console.log(app); //----- New Registration code start //----- Logout code start 
-    document.getElementById("logout").addEventListener("click", function() { signOut(auth).then(() => { 
+
+    //----- Logout code start 
+    document.getElementById("logout").addEventListener("click", function() { 
+        signOut(auth).then(() => { 
         // Sign-out successful. 
     console.log('Sign-out successful.'); 
     alert('Sign-out successful.'); 
@@ -88,4 +90,8 @@
 }).catch((error) => { // An error happened. 
     console.log('An error happened.'); }); }); 
     //----- End
+
+
+
+
 </script>
