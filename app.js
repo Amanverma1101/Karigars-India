@@ -81,8 +81,11 @@ app.post("/signout",(req,res)=>{
 app.get("/reset",(req,res)=>{
     return res.render("reset");
 });
+app.get('/about', (req, res) => {
+    res.render("about", { msg: msg, icon: icon });
+});
 app.get("/profile",async(req,res)=>{
-    var email = String(profemail);
+    email = String(profemail);
     let check=0;
     const snap = await db.collection(`karigarss`).get();
     snap.forEach((doc) => {
