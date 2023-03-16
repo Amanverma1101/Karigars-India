@@ -22,6 +22,12 @@ app.get('/moblogin',(req,res)=>{
 app.get('/signup',(req,res)=>{
     res.render("signup",{msg:msg,icon:icon});
 });
+app.get('/pop',(req,res)=>{
+    res.render("pop",{msg:msg,icon:icon});
+});
+app.get('/cpop',(req,res)=>{
+    res.render("cpop",{msg:msg,icon:icon});
+});
 app.get('/postjob',(req,res)=>{
     if(msg==="Logout"){
         return res.render("postjob",{msg:msg,icon:icon});
@@ -139,7 +145,7 @@ app.post('/iform',async (req,res)=>{
     };
     // console.log(userdata);
     await db.collection(`internship`).doc(userdata.email).set(userdata);
-    return res.redirect('/');
+    return res.redirect('/pop');
 });
 app.post('/sform',async (req,res)=>{
     // console.log(req.body);
@@ -178,6 +184,7 @@ app.post('/postjob',async(req,res)=>{
         joblo: req.body.jobloc,
         jobcategory: req.body.jobcategory,
         jobtype: req.body.jobtype,
+        link: req.body.link,
         gst: req.body.cgst,
         jobtitle: req.body.jobtitle
     };
