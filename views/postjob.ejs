@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Job</title>
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-    <link rel="stylesheet" href="css/k_form.css">
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/k_form.css" />
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/internship.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+  <%- include("nav") -%>
+  <br>
     <div class="wrapper">
         <div class="title">
           Post A New Job
         </div>
         
-        <form method="post" autocomplete="off" name="google-sheet" id="postform">
-        <div class="form ">
+        <form method="post" action="/postjob" autocomplete="off" name="google-sheet" id="postform">
+        <div class="form">
 
           <div class="note">
             <p>All fields marked with * are mandatory</p>
@@ -25,17 +32,17 @@
            </div>  
             <div class="inputfield">
               <label>Job Title</label>
-              <input type="text" name="jobtitle" class="input" id="jobtitle"/>
+              <input type="text" name="jobtitle" placeholder="Job Title" class="input" id="jobtitle"/>
            </div>  
             <div class="inputfield">
               <label>Job Location</label>
-              <input type="text" name="jobloc" class="input" id="jobloc"/>
+              <input type="text" name="jobloc" class="input" placeholder="Job Location" id="jobloc"/>
            </div>  
            
          <div class="inputfield">
           <label>Job Type<span class="note">*</span></label>
           <div class="custom_select">
-            <select id="jobtype">
+            <select id="jobtype" name="jobtype">
               <option value="">Select</option>
               <option value="Full-Time">Full Time</option>
               <option value="Part-Time">Part Time</option>
@@ -47,7 +54,7 @@
          <div class="inputfield">
           <label>Job Category<span class="note">*</span></label>
           <div class="custom_select">
-            <select id="jobcategory">
+            <select id="jobcategory" name="jobcategory">
               <option value="">Select</option>
               <option value="Carpenter">Carpenter</option>
               <option value="Contractor">Contractor</option>
@@ -68,44 +75,51 @@
 
          <div class="inputfield">
           <label>Salary <span class="note">*</span></label>
-          <input type="text" name="Salary" class="input" id="salary" required/>
+          <input type="text" name="salary" class="input" placeholder="salary" id="salary" required/>
        </div> 
 
            <div class="inputfield">
             <label>Job Description<span class="note">*</span></label>
-            <input type="text" class="textarea" name="Job-Description" id="desc" required/>
+            <input type="text" class="textarea" placeholder="Job Description" name="desc" id="desc" required/>
            </div> 
+
+           <div class="inputfield">
+            <label>Job Link<span class="note">*</span></label>
+            <input type="text" class="textarea" placeholder="Career Page" name="link" id="desc" required/>
+           </div> 
+
            <div class="inputfield ftitle">
             <h3>Company Details :-</h3>
            </div>
          <div class="inputfield">
           <label>Company Name<span class="note">*</span></label>
-          <input type="text" class="textarea" name="Company-name" id="cname"/>
+          <input type="text" class="textarea" placeholder="Company Name" name="cname" id="cname"/>
        </div> 
          <div class="inputfield">
           <label>Company GST Number<span class="note">*</span></label>
-          <input type="text" class="textarea" name="Company-GST-number" id="gst"/>
+          <input type="text" class="textarea" placeholder="GST Number" name="cgst" id="gst"/>
        </div> 
        <div class="inputfield">
         <label>Company Logo URL<span class="note">*</span></label>
-        <input type="text" class="textarea" name="c-url" id="url"/>
+        <input type="text" class="textarea" placeholder="Company Logo" name="curl" id="url"/>
      </div> 
      <div class="inputfield">
       <label>Company Address</label>
-      <input type="text" class="textarea" name="c-address" id="add"/>
+      <input type="text" class="textarea"  placeholder="Company Address" name="cadd" id="add"/>
    </div> 
           <div class="inputfield">
             <input type="submit" name="submit" value="Post this New Job" class="btn">
           </div>
 
           <div class="backbtn">
-          <input id="myButton" type="button" name="submit" value="Back to Home Page" class="btn"></a>
+          <input id="myButton" type="button" value="Back to Home Page" class="btn"></a>
           </div>
 
         </div>
     </form>
 </div>
-          
+<br>
+<%- include("footer") -%>        
 <!-- <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbx4vmQuYhf3RJcxgG99i_1GhImxmAUWgqy5JQk8GkC0K8AJXeYfNUB9Oq3L8UQSmks/exec'
   const form = document.forms['google-sheet']

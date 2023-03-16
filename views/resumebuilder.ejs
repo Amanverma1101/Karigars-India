@@ -1,86 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
     <title>Resume Builder</title>
-    <link rel="stylesheet" href="css/k_form.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/resumebuilder.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/skilldev.css">
 
-</head>
-<body>
-    
+  </head>
+  <body>
     <%- include("nav") -%>
-    <div class="wrapper">
-        <div class="title">
-          Resume Builder
+<div class="body">
+    <div id="javascript_header"></div>
+    <form>
+      <div class="form__header">
+        <h1>Build Your Resume</h1>
+        <p>Enter the fields below to generate an html resume</p>
+      </div>
+    
+      <h2>Personal Details</h2>
+    
+      <div class="form-group">
+        <label for="name">Full Name <span>*</span></label>
+        <input type="text" name="name" id="name" placeholder="Robert Norman Ross">
+        <div id="name__error" class="error"></div>
+      </div>
+    
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" placeholder="4059 Mt Lee Dr. Hollywood, CA 90068">
+      </div>
+    
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone" placeholder="+1  123 456 7890">
+      </div>
+    
+      <div class="form-group">
+        <label for="email">Email <span>*</span></label>
+        <input type="text" name="email" id="email" placeholder="example@mail.com">
+        <div id="email__error" class="error"></div>
+      </div>
+    
+      <div class="form-group">
+        <label for="about">About You</label>
+        <textarea name="about" id="about"
+                  placeholder="Three or four sentences about your personality, work ethic, interests, and/or more"></textarea>
+      </div>
+    
+      <div class="form-group">
+        <label for="career">Career Objectives</label>
+        <textarea name="career" id="career"
+                  placeholder="One or two sentences about what you wish to accomplish in your career"></textarea>
+      </div>
+    
+      <div class="form-group">
+        <label for="education">Education</label>
+        <textarea name="education" id="education"
+                  placeholder="List any completed high school, college, or other educational programs"></textarea>
+      </div>
+    
+      <div class="line-break"></div>
+    
+      <h2>Work Experience</h2>
+    
+      <h3>Most Recent Job</h3>
+    
+      <div class="form-date-group">
+        <div class="form-group">
+          <label for="job-1__start">Start Date</label>
+          <input type="date" name="job-1__start" id="job-1__start">
         </div>
-        
-        <form method="post" autocomplete="off" name="google-sheet" id="postform">
-        <div class="form ">
-
-          <div class="note">
-            <p>All fields marked with * are mandatory</p>
-         </div>
-         <div class="inputfield">
-          <label>Profile Picture</label>
-          <input type="file" class="textarea" name="c-address" id="add"/>
-       </div> 
-           <div class="inputfield">
-              <label>First Name  <span class="note">*</span></label>
-              <input type="email" name="email" class="input" id="email" placeholder="you@yourdomain.com" required/>
-           </div>  
-            <div class="inputfield">
-              <label>Last Name</label>
-              <input type="text" name="jobtitle" class="input" id="jobtitle"/>
-           </div>  
-            <div class="inputfield">
-              <label>Phone Number<span class="note">*</span></label>
-              <input type="text" name="jobloc" class="input" id="jobloc"/>
-           </div>  
-
-         <div class="inputfield">
-          <label>Email Address</label>
-          <input type="text" name="Salary" class="input" id="salary" required/>
-       </div> 
-
-           <div class="inputfield">
-            <label>City<span class="note">*</span></label>
-            <label>State/Provience<span class="note">*</span></label>
-            <input type="text" class="textarea" name="Job-Description" id="desc" required/>
-           </div> 
-         <div class="inputfield">
-          <label>Qualification<span class="note">*</span></label>
-          <input type="text" class="textarea" name="Company-name" id="cname"/>
-       </div> 
-         <div class="inputfield">
-          <label>Past Experience<span class="note">*</span></label>
-          <input type="text" class="textarea" name="Company-GST-number" id="gst"/>
-       </div> 
-       <div class="inputfield">
-        <label>Key Skill<span class="note">*</span></label>
-        <input type="text" class="textarea" name="c-url" id="url"/>
-     </div> 
-     <div class="inputfield">
-      <label>Portfolio</label>
-      <input type="file" class="textarea" name="c-address" id="add"/>
-   </div> 
-          <div class="inputfield">
-            <input type="submit" name="submit" value="Submit" class="btn">
-          </div>
-
+        <div class="form-group">
+          <label for="job-1__end">End Date</label>
+          <input type="date" name="job-1__end" id="job-1__end">
         </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="job-1__details">Position Details</label>
+        <textarea name="job-1__details" id="job-1__details"></textarea>
+      </div>
+    
+      <div class="line-break"></div>
+    
+      
+      <div class="form-group">
+        <label for="references">References</label>
+        <textarea name="references" id="references"></textarea>
+      </div>
+    
+      <div class="line-break"></div>
+    
+      <input type="submit" value="Create Resume" id="create-resume">
     </form>
-</div>
-<%- include("footer") -%>
-    <div class="app">
-      <a href="https://wa.me/+918178346064"><i class="fab fa-whatsapp"></i></a>
     </div>
-</body>
+<%- include("footer") -%>
+  </body>
+  <script src="js/resumebuilder.js"></script>
 </html>

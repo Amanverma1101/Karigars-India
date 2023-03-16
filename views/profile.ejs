@@ -4,57 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/profile.css">
+    <!-- <link rel="stylesheet" href="css/profile.css"> -->
+    <link rel="stylesheet" href="css/profileinfo.css">
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/internship.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <title>User Profile</title>
 </head>
 <body>
-    <div class = "card-wrapper">
-        <div class = "card">
-          <!-- card left -->
+  <%- include("nav") -%>
+      <%- include("profileinfo") -%>      
+      <%- include("footer") -%>      
 
-          <!-- card right -->
-          <div class = "product-content">
-            <h2 class = "product-title">Account Details</h2>
-
-      
-            <div class = "product-detail">
-              <h2>About Your Profile : </h2>
-              
-              <ul>
-                <li>Name: <span><%= list.fname + list.lname%></span></li>
-                <li>Title: <span><%= list.title %></span></li>
-                <li>Category: <span><%= list.category %></span></li>
-                <li>Gender: <span><%= list.gender %></span></li>
-                <li>Skills: <span><%= list.skill %></span></li>
-                <li>Qualificaion: <span><%= list.qualification %></span></li>
-                <li>Experience: <span><%= list.exp %>+years</span></li>
-                <li>Location: <span><%= list.city %>/<%= list.state %></span></li>
-                <li>Email: <span><%= list.email %></span></li>
-              </ul>
-            </div>
-      
-            <div class = "purchase-info">
-              <br>
-              <a href="/"><button type = "button" class = "btn"> <- Back to Home Page</button></a>
-            </div>
-      
-           
-          </div>
-
-          <div class = "product-imgs">
-            <div class = "img-display">
-              <div class = "img-showcase">
-                <img src = "<%= list.url %>" alt = "shoe image">
-               
-              </div>
-            </div>
-          </div>
-
-
-
-        </div>
-      </div>
-      <script src="style.js">
-      </script>
 </body>
+    <!-- <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"; 
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"; 
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+        const firebaseConfig = { 
+            apiKey: "AIzaSyDoMlriG5ch5Vursn-T1N8MOOtifZlT6LU", 
+            authDomain: "designkoktail-f13c3.firebaseapp.com", 
+            projectId: "designkoktail-f13c3", 
+            storageBucket:"designkoktail-f13c3.appspot.com", 
+            messagingSenderId: "237876784229", 
+            appId: "1:237876784229:web:85cdaab127d61f2b0c6a8c" 
+        }; 
+        // Initialize Firebase 
+        const app = initializeApp(firebaseConfig); 
+        const analytics = getAnalytics(app); 
+        const auth = getAuth();
+
+        auth.onAuthStateChanged((user)=>{
+            console.log(user);
+        });
+
+  </script> -->
 </html>

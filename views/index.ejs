@@ -14,16 +14,14 @@
     <!-- dfvgf -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
-    <!-- <link rel="stylesheet" href="css/lastsec.css"> -->
+    <link rel="stylesheet" href="css/lastsec.css">
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/clients.css">
     <link rel="stylesheet" href="css/internship.css">
     <link rel="stylesheet" href="css/footer.css">
-    <!-- <link rel="stylesheet" href="css/reviews.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.4-rc1/css/foundation.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"> -->
 
 
 </head>
@@ -34,18 +32,18 @@
         <div class="slider-box">
             <div id="slider">
                 <!-- <img src="images/img12.jpeg" alt=""> -->
-                <img src="images/3.jpg" alt="">
-                <img src="https://karigarsindia.com/wp-content/uploads/slider/cache/71213a2d078d2dc86b8e440382eaf909/pexels-rodolfo-quiros-2219024-scaled.jpg" alt="">
-                <img src="https://karigarsindia.com/wp-content/uploads/slider/cache/d1467d0be722d39c726a0dc89dfda996/iStock-1174420117-1500x630-1.jpg" alt="">
-                <img src="https://karigarsindia.com/wp-content/uploads/slider/cache/e7a1de90ac1f5249b89166dbb23fd734/India_-_Painting_a_staircase_-_0063-scaled.jpg" alt="">
+                <img class="mySlides" src="images/3.jpg" alt="">
+                <img class="mySlides" src="https://karigarsindia.com/wp-content/uploads/slider/cache/71213a2d078d2dc86b8e440382eaf909/pexels-rodolfo-quiros-2219024-scaled.jpg" alt="">
+                <img class="mySlides" src="https://karigarsindia.com/wp-content/uploads/slider/cache/d1467d0be722d39c726a0dc89dfda996/iStock-1174420117-1500x630-1.jpg" alt="">
+                <img class="mySlides" src="https://karigarsindia.com/wp-content/uploads/slider/cache/e7a1de90ac1f5249b89166dbb23fd734/India_-_Painting_a_staircase_-_0063-scaled.jpg" alt="">
                 <!-- <img src="images/slide3.jpeg" alt="">
             <img src="images/slide4.jpeg" alt=""> -->
             </div>
             <div class="indicators">
-                <span id="btn1" class="active"></span>
-                <span id="btn2"></span>
-                <span id="btn3"></span>
-                <span id="btn4"></span>
+                <span class="dot" id="btn1" class="active"></span>
+                <span class="dot" id="btn2"></span>
+                <span class="dot" id="btn3"></span>
+                <span class="dot" id="btn4"></span>
             </div>
         </div>
         <br>
@@ -212,8 +210,11 @@
                 </div>
             </div>
         </div>
+        <h2 class="h-primary clss center">Happy Customers</h2>
+        <p class="centerr">"Our most unhappy customers are our greatest source of learning"</p>
+        <%- include("customers") -%>
 
-
+        <br>
         <br>
         <%- include("footer") -%>
             <div class="app">
@@ -249,8 +250,8 @@
             <!----------- carouseljs -------->
 
 </body>
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script> -->
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js'></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <!-- <script src="js/review.js"></script> -->
 <script src="js/slider.js"></script>
 <script src="js/lastsec.js"></script>

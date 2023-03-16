@@ -26,6 +26,7 @@ footer .content {
     max-width: 1250px;
     margin: auto;
     padding: 30px 40px 40px 40px;
+    background: #172F1A;
 }
 
 footer .content .topp {
@@ -37,7 +38,7 @@ footer .content .topp {
 
 .content .topp .logo-details {
     color: #fff;
-    font-size: 30px;
+    font-size: 30px !important;
 }
 
 .content .topp .media-icons {

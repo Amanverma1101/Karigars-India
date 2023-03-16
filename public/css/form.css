@@ -1,0 +1,178 @@
+
+  .stl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f4f4f4;
+   }
+  
+  .container{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+  }
+  
+  .container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .container .title::before{
+    content: '';
+    position: absolute;
+    margin-top: 5px;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: #01411C;
+  }
+  .container form .account-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  form .account-details .form-group{
+    margin-bottom: 15px;
+    width: 100%;
+    margin-right: 20px;
+  }
+  .account-details .form-group .form-title{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .account-details .form-group input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  .container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  form .user-details .form-group{
+    width: calc(100% / 3 - 25px);
+    margin-right: 20px;
+  }
+  
+  .user-details .form-group .form-title{
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .user-details .form-group input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 1px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .form-group input:focus,
+  .form-group input:valid{
+    border-color: #01411C;
+  }
+  
+  form .form-radio .form-title{
+    font-weight: 500;
+  }
+  
+  form .form-radio .category{
+    display: flex;
+    width: 100%;
+    margin: 14px 0;
+    justify-content: flex-start;
+  }
+  .form-radio .category label{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  .form-radio .category .radio{
+    height: 10px;
+    width: 10px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  #dot-1:checked ~ .category label .one,
+  #dot-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #01411C;
+  }
+  
+  form input[type="radio"]{
+    display: none;
+  }
+  
+  form .button{
+    height: 45px;
+    margin: 45px 0;
+    cursor: pointer;
+  }
+  
+  form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: #01411C;
+    cursor: pointer;
+  }
+  
+  form .button input::hover{
+    background: #01411C;
+  }
+  
+  @media(max-width: 584px){
+    .container{
+      max-width: 100%;
+    }
+    form .account-details .form-group{
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    form .user-details .form-group{
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    form .form-radio .category{
+      width: 100%;
+    }
+    .container{
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+  }

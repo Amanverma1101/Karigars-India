@@ -32,7 +32,7 @@
 
                         <% if(icon !==""){ %>
                             <a href="/profile" id="profile" title="Profile">
-                                <div class="menu-item active">
+                                <div class="menu-item menu-item-a active">
                                     Profile
 
                                     <i class="fa <%= icon %>" aria-hidden="true"></i></div>
@@ -50,16 +50,48 @@
         <a class="btn" onclick="changeLanguage('hin')">हिंदी</a>
         <a class="btn">English</a>
     </div>
-    <div class="menu-item" id="logout">
+    <% if(msg !==""){ %>
+    <div class="menu-item menu-item-a active" id="logout">
         <%= msg %>
     </div>
+    <% }%>
 </nav>
 
 <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"; import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
-    signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"; const firebaseConfig = { apiKey: "AIzaSyDoMlriG5ch5Vursn-T1N8MOOtifZlT6LU", authDomain: "designkoktail-f13c3.firebaseapp.com", projectId: "designkoktail-f13c3", storageBucket:
-    "designkoktail-f13c3.appspot.com", messagingSenderId: "237876784229", appId: "1:237876784229:web:85cdaab127d61f2b0c6a8c" }; // Initialize Firebase const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app); const auth = getAuth();
-    console.log(app); //----- New Registration code start //----- Logout code start document.getElementById("logout").addEventListener("click", function() { signOut(auth).then(() => { // Sign-out successful. console.log('Sign-out successful.'); alert('Sign-out
-    successful.'); document.getElementById('logout').style.display = 'none'; document.getElementById('profile').style.display = 'none'; var request = new XMLHttpRequest(); request.open("POST", '/signout', true); request.setRequestHeader("Content-Type",
-    "application/json; charset=UTF-8"); request.send(""); // window.location.replace("/"); }).catch((error) => { // An error happened. console.log('An error happened.'); }); }); //----- End
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"; 
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"; 
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+     const firebaseConfig = { 
+        apiKey: "AIzaSyDoMlriG5ch5Vursn-T1N8MOOtifZlT6LU", 
+        authDomain: "designkoktail-f13c3.firebaseapp.com", 
+        projectId: "designkoktail-f13c3", 
+        storageBucket:"designkoktail-f13c3.appspot.com", 
+        messagingSenderId: "237876784229", 
+        appId: "1:237876784229:web:85cdaab127d61f2b0c6a8c" 
+    }; 
+    // Initialize Firebase 
+    const app = initializeApp(firebaseConfig); 
+    const analytics = getAnalytics(app); 
+    const auth = getAuth();
+
+    //----- Logout code start 
+    document.getElementById("logout").addEventListener("click", function() { 
+        signOut(auth).then(() => { 
+        // Sign-out successful. 
+    console.log('Sign-out successful.'); 
+    alert('Sign-out successful.'); 
+    document.getElementById('logout').style.display = 'none'; 
+    document.getElementById('profile').style.display = 'none'; 
+    var request = new XMLHttpRequest(); 
+    request.open("POST", '/signout', true); 
+    request.setRequestHeader("Content-Type","application/json; charset=UTF-8"); 
+    request.send(""); 
+    window.location.replace("/"); 
+}).catch((error) => { // An error happened. 
+    console.log('An error happened.'); }); }); 
+    //----- End
+
+
+
+
 </script>

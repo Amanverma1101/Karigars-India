@@ -84,6 +84,7 @@ firestore.collection("postjob").get().then((snapshot) =>{
           const jobtype = doc.data().jobtype;
           const gst = doc.data().gst;
           const jobtitle = doc.data().jobtitle;
+          const link = doc.data().link;
           
   
           // const title = doc.data().title;
@@ -112,7 +113,7 @@ firestore.collection("postjob").get().then((snapshot) =>{
         <div class="des">
 
           
-          <a href="" ><button class="click">Apply Now</button></a>
+          <a href="${link}" ><button class="click">Apply Now</button></a>
         </div>
 
           </div>

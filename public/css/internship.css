@@ -1,69 +1,62 @@
-#client-section {
-    position: relative;
+#client-section{
+  position: relative;
 }
-
-#client-section::before {
-    content: "";
-    position: absolute;
-    background-color: aliceblue;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.3;
+#client-section::before{
+  content: "";
+  position: absolute;
+  background-color: aliceblue;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
 }
-
-.clients {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: inherit;
-    overflow-x: scroll;
+.clients{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: inherit;
+  overflow-x: scroll;
 }
-
 .clients::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-
 
 /* Hide scrollbar for IE, Edge and Firefox */
-
 .clients {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+.clients .cls img{
+  display: inline-flex;
+  height: 240px;
+  width: 160px;
+  margin: 5px 60px 5px; 
+  border-radius: 20%;   
 }
 
-.clients .cls img {
-    display: inline-flex;
-    height: 240px;
-    width: 160px;
-    margin: 5px 60px 5px;
-    border-radius: 20%;
+.centerr
+{
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 50px;
 }
 
-.centerr {
-    text-align: center;
-    font-size: 1rem;
-    margin-bottom: 50px;
-}
+.clss{
+  font-size: 2.8rem;
+  padding: 20px;
+  font-family: 'Acme', sans-serif;
+  text-align: center;
+  font-weight: 10;
+ }
 
-.clss {
-    font-size: 2.8rem;
-    padding: 20px;
-    font-family: 'Acme', sans-serif;
-    text-align: center;
-    font-weight: 10;
-}
+ .description{
+  font-size: 16px;
+  text-align: center;
+  padding: 0px 10px 5px;
+  margin: 2px 80px 10px 60px; 
+ }
 
-.description {
-    font-size: 16px;
-    text-align: center;
-    padding: 0px 10px 5px;
-    margin: 2px 80px 10px 60px;
-}
-
-.intern-heading {
-    text-align: center;
-}
+ .intern-heading{
+  text-align: center;
+ }

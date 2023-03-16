@@ -1,73 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internships Offered</title>
+<html>
+  <head>
+    <title>Internship</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/intern.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/nav.css">
-        <link rel="stylesheet" href="css/button.css">
-        <link rel="stylesheet" href="css/footer.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-</head>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/footer.css">
 
-<body>
-  <%- include("nav") -%>
+  </head>
+  <body>
+    <%- include("nav") -%>
     <div class=" home-el text-center mx-0">
         <h1 class="custom-h1 cold"></h1>
         <p class="custom-p"></p>
     </div>
-    <br>
-    <br>
-    <section>
-        <div class="container">
+    <div class="stl">
+    <div class="container">
+      <div class="title">Internship</div>
+      <br>
+      <form method="post" action="/iform">
 
-          <div class="contactusform">
-            <h2 class="send">Internship Join Us</h2>
-            <div class="formBox">
-              <div class="inputBox w50">
-                <input type="text" name="" required>
-                <span>First Name</span>
-              </div>
-              <div class="inputBox w50">
-                <input type="text" name="" required>
-                <span>Last Name</span>
-              </div>
-              <div class="inputBox w50">
-                <input type="text" name="" required>
-                <span>Email Address</span>
-              </div>
-              <div class="inputBox w50">
-                <input type="text" name="" required>
-                <span>Phone</span>
-              </div>
-              <div class="inputBox w50">
-                <input type="text" name="" required>
-                <span>Qualification</span>
-              </div>
-              <div class="inputBox w50">
-                <input type="text" name="" required>
-                <span>Experience</span>
-              </div>
-              <div class="inputBox w100">
-                <textarea name="" required></textarea>
-                <span>Past Experience (if any)</span>
-              </div>
-              <div class="inputBox w100">
-                <textarea name="" required></textarea>
-                <span>Tell us more about you(if any)</span>
-              </div>
-              <div class="inputBox w50">
-                <input type="submit" value="Send">
-              </div>
+        <div class="user-details">
+            <div class="form-group">
+              <label class="form-title" for="">First name</label>
+              <input type="text" name="fname" placeholder="Enter first name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-title" for="">Middle name</label>
+              <input type="text" name="mname" placeholder="Enter middle name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-title" for="">Last name</label>
+              <input type="text" name="lname" placeholder="Enter last name" required>
             </div>
           </div>
-        </div>
-      </section>
-      <br>
-      <br>
-      <%- include("footer") -%>
-</body>
+
+        <div class="account-details">
+            <div class="form-group">
+              <label class="form-title" for="">Email</label>
+              <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label class="form-title" for="">Phone Number</label>
+              <input type="tel" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+              <label class="form-title" for="">College</label>
+              <input type="text" name="college" placeholder="Your College" required>
+            </div>
+            <div class="form-group">
+              <label class="form-title" for="">Qualification</label>
+              <input type="text" name="qualify" placeholder="Your Qualification" required>
+            </div>
+            <div class="form-group">
+                <label class="form-title" for="">Experience</label>
+                <input type="text" name="exp" placeholder="Your Experience" required>
+              </div>
+              <div class="form-group">
+                <label class="form-title" for="">Past Experience (if any)</label>
+                <input type="text" name="pexp" placeholder="Your Past Experience" required>
+              </div>
+              <div class="form-group">
+                <label class="form-title" for="">Internship you want to do? </label>
+                <input type="text" name="question" placeholder="Internships" required>
+              </div>
+              <div class="form-group">
+                <label class="form-title" for="">Tell us more about you</label>
+                <input type="text" name="moreabt" placeholder="Tell us more about you" required>
+              </div>
+          </div>
+          
+          <div class="button">
+           <input type="submit" value="Submit">
+          </div>
+      </form>
+    </div>
+</div>
+<%- include("footer") -%>
+  </body>
 </html>
