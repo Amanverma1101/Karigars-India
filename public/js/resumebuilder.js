@@ -18,20 +18,6 @@ const getState = () => {
         },
         details: $('job-1__details')
       },
-      job2: {
-        date: {
-          start: $('job-2__start'),
-          end: $('job-2__end')
-        },
-        details: $('job-2__details')
-      },
-      job3: {
-        date: {
-          start: $('job-3__start'),
-          end: $('job-3__end')
-        },
-        details: $('job-3__details')
-      },
       references: $('references')
     }
     return state
