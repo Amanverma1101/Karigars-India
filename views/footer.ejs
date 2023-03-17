@@ -35,11 +35,15 @@
                 <li><a href="tel:7011447737">7011447737</a></li>
                 <li><a href="mailto:KarigarsIndia.in@gmail.com">KarigarsIndia.in@gmail.com</a></li>
             </ul>
+            
             <ul class="box input-box">
+                <form name="form1" action="#">
                 <li class="link_name">Subscribe</li>
-                <li><input type="text" placeholder="Enter your email"></li>
-                <li><input type="button" value="Subscribe"></li>
+                <li><input type="text"  name='text1' placeholder="Enter your email"></li>
+                <li><input type="button" value="Subscribe" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)"/></li>
+            </form>
             </ul>
+      
         </div>
     </div>
     <div class="bottom-details">
@@ -51,3 +55,24 @@
         </div>
     </div>
 </footer>
+
+<script>
+    function ValidateEmail(inputText)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(inputText.value.match(mailformat))
+{
+alert("Subscribed to Karigars India Successfully!!");
+document.form1.text1.focus();
+form1.reset();
+return true;
+}
+else
+{
+alert("Invalid Email Address. Please enter correct email!!");
+document.form1.text1.focus();
+return false;
+}
+}
+
+</script>
