@@ -32,19 +32,15 @@ signInWithPopup(auth, provider)
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        var request = new XMLHttpRequest();
-        request.open("POST", '/googlelogin', true);
-        request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-        let data = {
-          "email":user.email,
-          "profile": user.photoURL,
-          "name": user.displayName
-        }
-        request.send (JSON.stringify(data));
-		    // document.getElementById('logout').style.display = 'block';
-        // console.log(user);
+        // let data = {
+        //   "email":user.email,
+        //   "profile": user.photoURL,
+        //   "name": user.displayName
+        // }
+        // request.send (JSON.stringify(data));
+        document.getElementById("loginmail").value = user.email;
+        document.getElementById("loginsubmit").click();
         alert("Hello "+user.displayName+", You are Successfully Logged In !");
-        window.location.replace("/");
 
     // ...
   }).catch((error) => {
@@ -62,12 +58,3 @@ signInWithPopup(auth, provider)
  });
 
 
-  // signOut.addEventListener('click',(e) => {
-
-  //  signOut(auth).then(() => {
-  //   // Sign-out successful.
-  //  }).catch((error) => {
-  //   // An error happened.
-  //  });
-
-  // });

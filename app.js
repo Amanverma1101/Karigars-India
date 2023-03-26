@@ -6,66 +6,111 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text({ type: "application/json" }));
-const db = require("./config");
-var email="",msg="",icon="",profemail="";
-//connect firebase firestore to express js?
+const {db} = require("./config");
+// var email="";
 
-app.get('/',(req,res)=>{
+const { attachCookiesTOResponse, isTokenValid} = require("./utils");
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
+
+const authenticate = async(req,res)=>{
+    const token = req.cookies.token;
+    if(!token){
+        console.log("No token Present !");
+        return "";
+    }else{
+        const payload = isTokenValid({token});
+        // console.log(payload);
+        console.log("Token is Present !");
+        return payload.email;
+    }
+};
+const fill = async(req,res)=>{
+    var msg="",icon="";
+    if(await authenticate(req,res)!=""){
+        msg="Logout";
+        icon = "fa-user";
+    }
+    const navitem = {msg: msg, icon: icon};
+    return navitem;
+};
+app.get('/',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("index",{msg:msg,icon:icon});
 });
-app.get('/login',(req,res)=>{
+app.get('/login',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("login",{msg:msg,icon:icon});
 });
-app.get('/moblogin',(req,res)=>{
+app.get('/moblogin',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("moblogin",{msg:msg,icon:icon});
 });
-app.get('/signup',(req,res)=>{
+app.get('/signup',async (req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("signup",{msg:msg,icon:icon});
 });
-app.get('/pop',(req,res)=>{
+app.get('/pop',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("pop",{msg:msg,icon:icon});
 });
-app.get('/cpop',(req,res)=>{
+app.get('/cpop',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("cpop",{msg:msg,icon:icon});
 });
-app.get('/postjob',(req,res)=>{
+app.get('/postjob',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     if(msg==="Logout"){
         return res.render("postjob",{msg:msg,icon:icon});
     }else{
         return res.render("notify",{msg:msg,icon:icon});
     }
 });
-app.get('/opportunity',(req,res)=>{
+app.get('/opportunity',async (req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("opportinuty",{msg:msg,icon:icon});
 });
-app.post("/login",(req,res)=>{
-    console.log(req.body);
-    profemail=req.body;
-    msg="Logout";
-    icon = "fa-user"
+app.post("/login",async(req,res)=>{
+        console.log(req.body.email);
+        // profemail=req.body;     
+        const email= String(req.body.email);
+        const tuser = {email: email};
+        attachCookiesTOResponse({ res, user: tuser });
+        // console.log(req.body);
+        // res.json({user: tuser});
+    
+    // msg="Logout";
+    // icon = "fa-user";
     return res.redirect("/");
 });
-app.post("/googlelogin",(req,res)=>{
-    data = JSON.parse(req.body)
+app.post("/googlelogin",async (req,res)=>{
+    
+    // data = JSON.parse(req.body)
     // console.log(data);
-    email=data.email;
-    profemail=data.email;
-    msg="Logout";
-    icon = "fa-user"
-    if (data){
+    if (req.body.email){
+        // email=data.email;
+        // profemail=data.email;
+        const email= String(req.body.email);
+        const tuser = {email: email};
+        attachCookiesTOResponse({res,user: tuser});
         // console.log(data);
-        return res.redirect("select",{msg:msg,icon:icon}); // success status
+        // const {msg,icon} = await fill(req,res);
+        return res.redirect("/"); // success status
     }
     else{
         // console.log("jdf");
         return res.sendStatus(400); // error status
     }
 });
-app.post('/signup',(req,res)=>{
+app.post('/signup',async(req,res)=>{
     if (req.body){
-        email= req.body;
-        console.log(req.body);
-        return res.redirect("select",{msg:msg,icon:icon}); // success status
+        email= String(req.body);
+        const tuser = {email: email};
+        attachCookiesTOResponse({res,user: tuser});
+        // console.log(req.body);
+        // res.json({user: tuser});
+        return res.redirect("/select"); // success status
     }
     else{
         // console.log("jdf");
@@ -75,18 +120,26 @@ app.post('/signup',(req,res)=>{
 app.post("/signout",(req,res)=>{
     msg = "";
     icon="";
-    // console.log("sout");
+    res.cookie('token','logout',{
+        httpOnly: true,
+        expires: new Date(Date.now())
+    });
+    // res.json({msg : "user loged out"});
     return res.redirect("/");
 });
 app.get("/reset",(req,res)=>{
     return res.render("reset");
 });
-app.get('/about', (req, res) => {
+app.get('/about',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("about", { msg: msg, icon: icon });
 });
 app.get("/profile",async(req,res)=>{
-    email = String(profemail);
+    // email = String(profemail);
+    const email = await authenticate(req,res);
     let check=0;
+    console.log(email);
+    const {msg,icon} = await fill(req,res);
     const snap = await db.collection(`karigarss`).get();
     snap.forEach((doc) => {
         if(doc.id==email){
@@ -96,15 +149,17 @@ app.get("/profile",async(req,res)=>{
         }
       });
       if(check==0){
-      return res.render("select",{msg:msg,icon:icon});
+        return res.render("select",{msg:msg,icon:icon});
       }
 });
-app.get('/select',(req,res)=>{
-    console.log("reached");
+app.get('/select',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("select",{msg:msg,icon:icon});
 });
-app.get('/kform',(req,res)=>{
+app.get('/kform',async(req,res)=>{
     // console.log("reached");
+    const email = await authenticate(req,res);
+    const {msg,icon} = await fill(req,res);
     res.render("k_form",{mailid: email,msg:msg,icon:icon});
 });
 app.post('/kform',async (req,res)=>{
@@ -170,10 +225,13 @@ app.post('/sform',async (req,res)=>{
 app.get('/companies',async(req,res)=>{
     let snapshot = await db.collection(`companies`).get(); 
     let clist = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    const {msg,icon} = await fill(req,res);
     return res.render("companies", { newListItems: clist,msg:msg,icon:icon });
 });
-app.get('/cform',(req,res)=>{
-    console.log("reached");
+app.get('/cform',async(req,res)=>{
+    // console.log("reached");
+    const email = await authenticate(req,res);
+    const {msg,icon} =await fill(req,res);
     return res.render("cform",{mailid: email,msg:msg,icon:icon});
 });
 app.post('/postjob',async(req,res)=>{
@@ -215,19 +273,23 @@ app.post('/cform',async(req,res)=>{
 app.get('/karigars',async(req,res)=>{
     let snapshot = await db.collection(`karigarss`).get(); 
     let list = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    const {msg,icon} =await fill(req,res);
     return res.render("karigars", { newListItems: list,msg:msg,icon:icon });
 });
-app.get('/pricing',(req,res)=>{
+app.get('/pricing',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("pricing",{msg:msg,icon:icon});
 });
-app.get('/services',(req,res)=>{
+app.get('/services',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("services",{msg:msg,icon:icon});
 });
 var fprice=0;
-app.post('/checkout',(req,res)=>{
+app.post('/checkout',async(req,res)=>{
       const price = req.body.fprice;
       const gstp = req.body.gstprice;
       fprice=gstp;
+      const {msg,icon} = await fill(req,res);
     if(msg==="Logout"){
         return res.render("finalcheckout",{price: price,gst: gstp,msg:msg,icon:icon});
     }else{
@@ -240,7 +302,8 @@ app.get('/checkout',(req,res)=>{
 
 
 app.get('/cart/:id',async(req,res)=>{
-    var email = req.params.id;
+    const email = req.params.id;
+    const {msg,icon} = await fill(req,res);
     const snap = await db.collection(`karigarss`).get();
     snap.forEach((doc) => {
         if(doc.id==email){
@@ -250,22 +313,28 @@ app.get('/cart/:id',async(req,res)=>{
       });
       return ;
 });
-app.get('/resumebuilder',(req,res)=>{
+app.get('/resumebuilder',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("resumebuilder",{msg:msg,icon:icon});
 });
-app.get('/faq',(req,res)=>{
+app.get('/faq',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("faq",{msg:msg,icon:icon});
 });
-app.get('/skill',(req,res)=>{
+app.get('/skill',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("skill",{msg:msg,icon:icon});
 });
-app.get('/contact',(req,res)=>{
+app.get('/contact',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("contact",{msg:msg,icon:icon});
 });
-app.get('/internship',(req,res)=>{
+app.get('/internship',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("internship",{msg:msg,icon:icon});
 });
-app.get('/blogs',(req,res)=>{
+app.get('/blogs',async(req,res)=>{
+    const {msg,icon} = await fill(req,res);
     res.render("blogs",{msg:msg,icon:icon});
 });
 

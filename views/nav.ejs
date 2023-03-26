@@ -16,7 +16,7 @@
     <div class="Search">
         <div class="menu-wrap">
             <div class="menu h-xs ">
-                <% if(msg!=="Logout"){%>
+                <% if(msg===""){%>
                     <a href="/login">
                         <div class="menu-item menu-item-a">
                             Login / Register
@@ -30,7 +30,7 @@
                             </div>
                         </a>
 
-                        <% if(icon !==""){ %>
+                        <% if(msg ==="Logout"){ %>
                             <a href="/profile" id="profile" title="Profile">
                                 <div class="menu-item menu-item-a active">
                                     Profile
@@ -50,9 +50,11 @@
         <a class="btn" onclick="changeLanguage('hin')">हिंदी</a>
         <a class="btn">English</a>
     </div>
-    <% if(msg !==""){ %>
-    <div class="menu-item menu-item-a active" id="logout">
-        <%= msg %>
+    <% if(msg ==="Logout"){ %>
+    <div>
+        <form action="/signout" method="post">
+            <button class="menu-item menu-item-a active" type = "submit"><%= msg %></button>
+        </form>
     </div>
     <% }%>
 </nav>
@@ -82,11 +84,11 @@
     alert('Sign-out successful.'); 
     document.getElementById('logout').style.display = 'none'; 
     document.getElementById('profile').style.display = 'none'; 
-    var request = new XMLHttpRequest(); 
-    request.open("POST", '/signout', true); 
-    request.setRequestHeader("Content-Type","application/json; charset=UTF-8"); 
-    request.send(""); 
-    window.location.replace("/"); 
+    // var request = new XMLHttpRequest(); 
+    // request.open("POST", '/signout', true); 
+    // request.setRequestHeader("Content-Type","application/json; charset=UTF-8"); 
+    // request.send(""); 
+    // window.location.replace("/"); 
 }).catch((error) => { // An error happened. 
     console.log('An error happened.'); }); }); 
     //----- End

@@ -19,23 +19,21 @@ const signInWithFacebook = () => {
 
   signInWithPopup(auth,provider)
   .then((result) => {
-        // const credential = GoogleAuthProvider.credentialFromResult(result);
-        // const token = credential.accessToken;
-        // The signed-in user info.
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
         const user = result.user;
-        var request = new XMLHttpRequest();
-        request.open("POST", '/googlelogin', true);
-        request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-        let data = {
-        "email":user.email,
-        "profile": user.photoURL,
-        "name": user.displayName
-        }
-        request.send (JSON.stringify(data));
-            // document.getElementById('logout').style.display = 'block';
-        // console.log(user);
+        console.log(result.user);
+        // let data = {
+        // "email":user.email,
+        // "profile": user.photoURL,
+        // "name": user.displayName
+        // }
+        // request.send (JSON.stringify(data));
+        document.getElementById("loginmail").value = user.email;
+        console.log(document.getElementById("loginmail").value);
+        document.getElementById("loginsubmit").click();
         alert("Hello "+user.displayName+", You are Successfully Logged In !");
-        window.location.replace("/");
+        // window.location.replace("/");
   })
   .catch(error => {
     console.error(error);

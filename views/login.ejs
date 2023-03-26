@@ -68,6 +68,10 @@
     </div>
 
     <!-- Signup Form -->
+<form method="post" action="/login">
+    <input id="loginmail" type="email" name="email" readonly="readonly">
+    <button type="submit" id="loginsubmit" style="display: none;"></button>
+</form>
 
     
 </section>
@@ -124,13 +128,8 @@
 		    console.log(user);
             document.getElementById("loginform").reset();
 		    alert(user.email+" Login successfully!!!");
-            var request = new XMLHttpRequest();
-            request.open("POST", '/login', true);
-            request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-            request.send (user.email);
-		    // document.getElementById('logout').style.display = 'block';
-		    window.location.replace("/");
-            // ...
+            document.getElementById("loginmail").value = user.email;
+            document.getElementById("loginsubmit").click();
 		  })
 		  .catch((error) => {
 		    const errorCode = error.code;
