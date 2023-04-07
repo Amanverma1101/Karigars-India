@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text({ type: "application/json" }));
 const {db} = require("./config");
-// var email="";
+
 
 const { attachCookiesTOResponse, isTokenValid} = require("./utils");
 const cookieParser = require("cookie-parser");
@@ -35,6 +35,9 @@ const fill = async(req,res)=>{
     const navitem = {msg: msg, icon: icon};
     return navitem;
 };
+
+
+
 app.get('/',async(req,res)=>{
     const {msg,icon} = await fill(req,res);
     res.render("index",{msg:msg,icon:icon});
@@ -111,8 +114,7 @@ app.post('/signup',async(req,res)=>{
         // console.log(req.body);
         // res.json({user: tuser});
         return res.redirect("/select"); // success status
-    }
-    else{
+    }else{
         // console.log("jdf");
         return res.sendStatus(400); // error status
     }
@@ -186,6 +188,27 @@ app.post('/kform',async (req,res)=>{
     await db.collection(`karigarss`).doc(userdata.email).set(userdata);
     return res.redirect('/karigars');
 });
+
+
+app.post('/trial',async (req,res)=>{
+    const data = {
+      stringExample: 'Hello, World!',
+      booleanExample: true,
+      numberExample: 3.14159265,
+    //   dateExample: Timestamp.fromDate(new Date('December 10, 1815')),
+      arrayExample: [5, true, 'hello'],
+      nullExample: null,
+      objectExample: {
+        a: 5,
+        b: true
+      }
+    }
+    await db.collection('data').doc('one').set(data);
+    return res.send("updated the data");
+
+  });
+
+
 app.post('/iform',async (req,res)=>{
     // console.log(req.body);
     const userdata = {
