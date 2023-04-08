@@ -318,10 +318,16 @@ header::after {
 .banner{
     margin-left: 70px !important;
 }
+.heading {
+    margin-left: 3rem;
+}
 }
 @media (max-width:630px) {
 .banner{
     margin-left: 50px !important;
+}
+.heading {
+    margin-left: 2rem;
 }
 .para {
     text-align: center !important;
