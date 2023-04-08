@@ -6,8 +6,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text({ type: "application/json" }));
-const {db} = require("./config");
-
+const {db,fba} = require("./config");
 
 const { attachCookiesTOResponse, isTokenValid} = require("./utils");
 const cookieParser = require("cookie-parser");
@@ -74,6 +73,27 @@ app.get('/opportunity',async (req,res)=>{
     const {msg,icon} = await fill(req,res);
     res.render("opportinuty",{msg:msg,icon:icon});
 });
+// app.post("/login",async(req,res)=>{
+//     try{
+//         const {email, password} = req.body;
+//         await fba.auth().getUsers(email,password)
+//         .then((userCredential) => {
+//         // Signed in
+//         var user = userCredential.user;        
+//         alert(user.email+" Login successfully!!!");
+//         console.log(user);
+//         })
+//         .catch((error) => {
+//             var errorCode = error.code;
+//             var errorMessage = error.message;
+//             console.log(error);
+//         });
+//         res.redirect('/');
+//     }catch(e) {
+//             console.log(e);
+//             res.redirect('/signup');
+//         }
+// });
 app.post("/login",async(req,res)=>{
         console.log(req.body.email);
         // profemail=req.body;     

@@ -10,9 +10,8 @@ const firebaseConfig = {
   appId: process.env.appId
 };
 // firebase.initializeApp(firebaseConfig);
-const ref = firebase.initializeApp({
+const fba = firebase.initializeApp({
   credential: firebase.credential.cert(credentials),
-  databaseURL:"https://designkoktail-f13c3-default-rtdb.firebaseio.com"
 });
 // database.initializeApp({
 //   credential: firebase.credential.cert(credentials),
@@ -22,4 +21,4 @@ const db = firebase.firestore();
 
 // const Task = db.collection("Tasks");
 // const Credential = db.collection("Cresentials");
-module.exports = {db};
+module.exports = {db,fba};//firebase-app
