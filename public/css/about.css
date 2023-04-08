@@ -319,6 +319,16 @@ header::after {
     margin-left: 70px !important;
 }
 }
+@media (max-width:630px) {
+.banner{
+    margin-left: 50px !important;
+}
+.para {
+    text-align: center !important;
+    margin: 1rem 5rem !important;
+    margin-top: 31px !important;
+}
+}
 @media screen and (max-width: 784px) {
     #list {
         display: none;
@@ -379,7 +389,7 @@ header::after {
     }
     .para {
         text-align: center !important;
-        margin: 1rem 6rem !important;
+        margin: 1rem 4.5rem !important;
         margin-top: 31px !important;
     }
     .num-container {
