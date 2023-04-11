@@ -1,0 +1,85 @@
+<div class="navbar">
+	<a href="/">
+        <div class="logo">
+            <h2>Karigars India</h2>
+        </div>
+    </a>
+	
+	
+	<ul class="links">
+        <li><a href="/services">Services</a></li>
+        <li><a href="/karigars">Karigars</a></li>
+        <li><a href="/companies">Companies</a></li>
+        <li><a href="/opportunity">Opportunities</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+	</ul>
+	
+	
+	<div class="right">
+        <% if(msg===""){%>
+            <a href="/login">
+		        <button>Login/Register</button>
+            </a>
+        <% } %>
+        <a href="/postjob">
+		    <button>PostJob</button>
+        </a>
+        <% if(msg ==="Logout"){ %>
+            <a href="/profile" id="profile" title="Profile">
+		        <button>Profile</button>
+            </a>
+            <% } %>
+
+        <% if(msg ==="Logout"){ %>    
+            <form action="/signout" method="post">
+                <button type = "submit"><%= msg %></button>
+            </form>
+        <% }%>
+	</div>
+	
+	<div class="toggle">
+		<div class="line1"></div>
+		<div class="line2"></div>
+		<div class="line3"></div>
+	</div>
+	
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"; 
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"; 
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+     const firebaseConfig = { 
+        apiKey: "AIzaSyDoMlriG5ch5Vursn-T1N8MOOtifZlT6LU", 
+        authDomain: "designkoktail-f13c3.firebaseapp.com", 
+        projectId: "designkoktail-f13c3", 
+        storageBucket:"designkoktail-f13c3.appspot.com", 
+        messagingSenderId: "237876784229", 
+        appId: "1:237876784229:web:85cdaab127d61f2b0c6a8c" 
+    }; 
+    // Initialize Firebase 
+    const app = initializeApp(firebaseConfig); 
+    const analytics = getAnalytics(app); 
+    const auth = getAuth();
+
+    //----- Logout code start 
+    document.getElementById("logout").addEventListener("click", function() { 
+        signOut(auth).then(() => { 
+        // Sign-out successful. 
+    console.log('Sign-out successful.'); 
+    alert('Sign-out successful.'); 
+    document.getElementById('logout').style.display = 'none'; 
+    document.getElementById('profile').style.display = 'none'; 
+    // var request = new XMLHttpRequest(); 
+    // request.open("POST", '/signout', true); 
+    // request.setRequestHeader("Content-Type","application/json; charset=UTF-8"); 
+    // request.send(""); 
+    // window.location.replace("/"); 
+}).catch((error) => { // An error happened. 
+    console.log('An error happened.'); }); }); 
+    //----- End
+
+
+
+
+</script>
