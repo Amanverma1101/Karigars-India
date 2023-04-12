@@ -12,7 +12,7 @@ body, button, input {
   transition: 0.4s ease all;
 }
 .navbar {
-  background: #080808;
+  background: #2B5430;
   color: #fff;
   padding: 0 15px;
   width: 100%;
@@ -52,14 +52,14 @@ body, button, input {
   color: #fff;
 }
 .navbar ul.links li:hover {
-  background: #ffc600;
+  background: #2B5430;
   cursor: pointer;
 }
 .navbar ul.links li:hover a {
   color: #080808;
 }
 button {
-  background: #ffc600;
+  background: #fff;
   outline: none;
   font-weight: bold;
   padding: 10px 18px;
