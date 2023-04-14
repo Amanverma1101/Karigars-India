@@ -1,49 +1,50 @@
-<div class="navbar">
-	<a href="/">
-        <div class="logo">
-            <h2>Karigars India</h2>
-        </div>
-    </a>
-	
-	
-	<ul class="links">
-        <li><a href="/services">Services</a></li>
-        <li><a href="/karigars">Karigars</a></li>
-        <li><a href="/companies">Companies</a></li>
-        <li><a href="/opportunity">Opportunities</a></li>
-        <li><a href="/pricing">Pricing</a></li>
-	</ul>
-	
-	
-	<div class="right">
-        <% if(msg===""){%>
-            <a href="/login">
-		        <button>Login/Register</button>
-            </a>
-        <% } %>
-        <a href="/postjob">
-		    <button>PostJob</button>
-        </a>
-        <% if(msg ==="Logout"){ %>
-            <a href="/profile" id="profile" title="Profile">
-		        <button>Profile</button>
-            </a>
-            <% } %>
 
-        <% if(msg ==="Logout"){ %>    
-            <form action="/signout" method="post">
-                <button type = "submit"><%= msg %></button>
-            </form>
-        <% }%>
-	</div>
-	
-	<div class="toggle">
-		<div class="line1"></div>
-		<div class="line2"></div>
-		<div class="line3"></div>
-	</div>
-	
-</div>
+<nav>
+    <div class="wrapper header">
+        <div class="logo">
+            <a href="/">
+                <div class="content-nav">
+                    <span class="title">Karigars India</span>
+                    <p class="tag-line">One Place for Dream jobs</p>
+                </div>
+            </a>
+        </div>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="nav-links menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/karigars">Karigars</a></li>
+                <li><a href="/companies">Companies</a></li>
+                <li><a href="/opportunity">Opportunities</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li>
+                    <% if(msg===""){%>
+                    <a href="/login">
+                            Login / Register
+                    </a>
+                    <% } %>
+                </li>
+                <li>
+                    <a href="/postjob">PostJob</a>
+                </li>
+                <li>
+                    <% if(msg ==="Logout"){ %>
+                        <a href="/profile" id="profile" title="Profile">
+                                Profile
+                                <i class="fa <%= icon %>" aria-hidden="true"></i>
+                        </a>
+                    <% } %>
+                </li>
+                <li>
+                    <% if(msg ==="Logout"){ %>
+                            <form action="/signout" method="post">
+                                <button type = "submit"><%= msg %></button>
+                            </form>
+                        <% }%>
+                </li>
+            </ul>
+        </div>
+</nav>
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"; 
