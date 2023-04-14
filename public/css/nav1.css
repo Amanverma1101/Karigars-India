@@ -305,6 +305,9 @@ nav .wrapper {
     .wrapper .btn {
         display: block;
     }
+    .nav-links li a {
+      color: ;
+    }
     .wrapper .nav-links {
         position: absolute;
         /* height: 100vh; */
