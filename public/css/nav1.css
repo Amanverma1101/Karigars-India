@@ -111,7 +111,7 @@
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 350px;
+  max-height: 400px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
