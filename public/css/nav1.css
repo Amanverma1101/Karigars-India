@@ -13,13 +13,17 @@
 .lbtn a:hover {
     color: #000000 !important;
 }
+.sobtn{
+    cursor: pointer;
+}
 .sobtn button{
     padding: 0 20px;
     color: #d9d9d9;
     font-size: 17px;
     background-color: #2B5430;
     width: 100%;
-    border: none
+    border: none;
+
 }
 /* header */
 
@@ -163,7 +167,7 @@ nav {
     background: #242526;
 }
 
-nav .wrapper {
+nav .wrapperr {
     position: relative;
     max-width: 100%;
     padding: 0px 30px;
@@ -176,7 +180,7 @@ nav .wrapper {
     background-color:#2B5430;
 }
 
-.wrapper .logo a,
+.wrapperr .logo a,
 .mega-box .content .rowww p {
     color: #fff;
     font-size: 18px;
@@ -301,21 +305,21 @@ nav .wrapper {
     color: #f2f2f2;
 }
 
-.wrapper .btn {
+.wrapperr .btn {
     color: #fff;
     font-size: 20px;
     cursor: pointer;
     display: none;
 }
 
-.wrapper .btn.close-btn {
+.wrapperr .btn.close-btn {
     position: absolute;
     right: 30px;
     top: 10px;
 }
 
 @media screen and (max-width: 1320px) {
-    .wrapper .btn {
+    .wrapperr .btn {
         display: block;
     }
     .nav-links li a {
@@ -325,7 +329,7 @@ nav .wrapper {
       color: #112905;
   }
   
-    .wrapper .nav-links {
+    .wrapperr .nav-links {
         position: absolute;
         /* height: 100vh; */
         width: 100%;
@@ -479,10 +483,10 @@ nav input {
     font-size: 14px;
     font-weight: 300;
     color: #fff;
-    margin-left: 3px;
+    /* margin-left: 3px; */
 }
 
-.title {
+.content-nav .titlee {
     /* font-size: 30px; */
     font-weight: 600;
     font-family: Georgia, 'Times New Roman', Times, serif;
