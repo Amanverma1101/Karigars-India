@@ -1,9 +1,9 @@
 <nav>
-    <div class="wrapper header">
+    <div class="wrapperr header">
         <div class="logo">
             <a href="/">
                 <div class="content-nav">
-                    <span class="title">Karigars India</span>
+                    <span class="titlee">Karigars India</span>
                     <p class="tag-line">One Place for Dream jobs</p>
                 </div>
             </a>
@@ -11,47 +11,73 @@
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="nav-links menu">
-            <li><a href="/services">Services</a></li>
-            <li><a href="/karigars">Karigars</a></li>
-            <li><a href="/companies">Companies</a></li>
-            <li><a href="/opportunity">Opportunities</a></li>
-            <li><a href="/pricing">Pricing</a></li>
-            <li>
-                <% if(msg===""){%>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/karigars">Karigars</a></li>
+                <li><a href="/companies">Companies</a></li>
+                <li><a href="/opportunity">Opportunities</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li>
+                    <a href="/postjob">PostJob</a>
+                </li>
+                <li class="lbtn">
+                    <% if(msg===""){%>
                     <a href="/login">
                             Login / Register
                     </a>
                     <% } %>
-            </li>
-            <li>
-                <a class="" href="/postjob">PostJob</a>
-            </li>
-            <li>
+                </li>
                 <% if(msg ==="Logout"){ %>
+                <li class="lbtn">
                     <a href="/profile" id="profile" title="Profile">
-                                Profile
-                                <i class="fa <%= icon %>" aria-hidden="true"></i>
-                        </a>
-                    <% } %>
-            </li>
-            <li>
+                            Profile
+                            <i class="fa <%= icon %>" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <% } %>
                 <% if(msg ==="Logout"){ %>
+                <li class="sobtn">
                     <form action="/signout" method="post">
-                        <button type="submit"><%= msg %></button>
+                        <button type = "submit"><%= msg %></button>
                     </form>
-                    <% }%>
-            </li>
-        </ul>
-    </div>
+                </li>
+                <% }%>
+            </ul>
+        </div>
 </nav>
 
 <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"; import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
-    signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"; const firebaseConfig = { apiKey: "AIzaSyDoMlriG5ch5Vursn-T1N8MOOtifZlT6LU", authDomain: "designkoktail-f13c3.firebaseapp.com", projectId: "designkoktail-f13c3",
-    storageBucket:"designkoktail-f13c3.appspot.com", messagingSenderId: "237876784229", appId: "1:237876784229:web:85cdaab127d61f2b0c6a8c" }; // Initialize Firebase const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app); const
-    auth = getAuth(); //----- Logout code start document.getElementById("logout").addEventListener("click", function() { signOut(auth).then(() => { // Sign-out successful. console.log('Sign-out successful.'); alert('Sign-out successful.'); document.getElementById('logout').style.display
-    = 'none'; document.getElementById('profile').style.display = 'none'; // var request = new XMLHttpRequest(); // request.open("POST", '/signout', true); // request.setRequestHeader("Content-Type","application/json; charset=UTF-8"); // request.send("");
-    // window.location.replace("/"); }).catch((error) => { // An error happened. console.log('An error happened.'); }); }); //----- End
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"; 
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"; 
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+     const firebaseConfig = { 
+        apiKey: "AIzaSyDoMlriG5ch5Vursn-T1N8MOOtifZlT6LU", 
+        authDomain: "designkoktail-f13c3.firebaseapp.com", 
+        projectId: "designkoktail-f13c3", 
+        storageBucket:"designkoktail-f13c3.appspot.com", 
+        messagingSenderId: "237876784229", 
+        appId: "1:237876784229:web:85cdaab127d61f2b0c6a8c" 
+    }; 
+    // Initialize Firebase 
+    const app = initializeApp(firebaseConfig); 
+    const analytics = getAnalytics(app); 
+    const auth = getAuth();
+
+    //----- Logout code start 
+    document.getElementById("logout").addEventListener("click", function() { 
+        signOut(auth).then(() => { 
+        // Sign-out successful. 
+    console.log('Sign-out successful.'); 
+    alert('Sign-out successful.'); 
+    document.getElementById('logout').style.display = 'none'; 
+    document.getElementById('profile').style.display = 'none'; 
+    // var request = new XMLHttpRequest(); 
+    // request.open("POST", '/signout', true); 
+    // request.setRequestHeader("Content-Type","application/json; charset=UTF-8"); 
+    // request.send(""); 
+    // window.location.replace("/"); 
+}).catch((error) => { // An error happened. 
+    console.log('An error happened.'); }); }); 
+    //----- End
 
 
 
