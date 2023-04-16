@@ -18,30 +18,30 @@
                 <li><a href="/opportunity">Opportunities</a></li>
                 <li><a href="/pricing">Pricing</a></li>
                 <li>
+                    <a href="/postjob">PostJob</a>
+                </li>
+                <li class="lbtn">
                     <% if(msg===""){%>
                     <a href="/login">
                             Login / Register
                     </a>
                     <% } %>
                 </li>
-                <li>
-                    <a href="/postjob">PostJob</a>
+                <% if(msg ==="Logout"){ %>
+                <li class="lbtn">
+                    <a href="/profile" id="profile" title="Profile">
+                            Profile
+                            <i class="fa <%= icon %>" aria-hidden="true"></i>
+                    </a>
                 </li>
-                <li>
-                    <% if(msg ==="Logout"){ %>
-                        <a href="/profile" id="profile" title="Profile">
-                                Profile
-                                <i class="fa <%= icon %>" aria-hidden="true"></i>
-                        </a>
-                    <% } %>
+                <% } %>
+                <% if(msg ==="Logout"){ %>
+                <li class="sobtn">
+                    <form action="/signout" method="post">
+                        <button type = "submit"><%= msg %></button>
+                    </form>
                 </li>
-                <li>
-                    <% if(msg ==="Logout"){ %>
-                            <form action="/signout" method="post">
-                                <button type = "submit"><%= msg %></button>
-                            </form>
-                        <% }%>
-                </li>
+                <% }%>
             </ul>
         </div>
 </nav>
