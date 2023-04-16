@@ -67,7 +67,7 @@ flex-wrap: wrap;
          border-bottom-right-radius: 5px;
    border-bottom-left-radius: 5px;
  }
- button{
+ .des button{
    margin-top: 40px;
    margin-bottom: 10px;
    background-color: white;
@@ -75,7 +75,7 @@ flex-wrap: wrap;
    border-radius: 5px;
    padding:10px;
  }
- button:hover{
+ .des button:hover{
    background-color: black;
    color: white;
    transition: .5s;
