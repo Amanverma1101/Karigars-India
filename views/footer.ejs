@@ -35,44 +35,39 @@
                 <li><a href="tel:7011447737">7011447737</a></li>
                 <li><a href="mailto:KarigarsIndia.in@gmail.com">KarigarsIndia.in@gmail.com</a></li>
             </ul>
-            
+
             <ul class="box input-box">
                 <form name="form1" action="#">
-                <li class="link_name">Subscribe</li>
-                <li><input type="text"  name='text1' placeholder="Enter your email"></li>
-                <li><input type="button" value="Subscribe" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)"/></li>
-            </form>
+                    <li class="link_name">Subscribe</li>
+                    <li><input type="text" name='text1' placeholder="Enter your email"></li>
+                    <li><input type="button" value="Subscribe" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)" /></li>
+                </form>
             </ul>
-      
+
         </div>
     </div>
     <div class="bottom-details">
         <div class="bottom_text">
             <span class="copyright_text">Copyright © 2023 <a href="#">Karigars India</a>All rights reserved</span>
             <span class="policy_terms">
-          <a href="https://designkoktail.com/">Designed and Maintained By Designkoktail</a>
+          <a href="https://designkoktail.com/">Designed and Maintenance By Designkoktail</a>
         </span>
         </div>
     </div>
 </footer>
 
 <script>
-    function ValidateEmail(inputText)
-{
-var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-if(inputText.value.match(mailformat))
-{
-alert("Subscribed to Karigars India Successfully!!");
-document.form1.text1.focus();
-form1.reset();
-return true;
-}
-else
-{
-alert("Invalid Email Address. Please enter correct email!!");
-document.form1.text1.focus();
-return false;
-}
-}
-
+    function ValidateEmail(inputText) {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (inputText.value.match(mailformat)) {
+            alert("Subscribed to Karigars India Successfully!!");
+            document.form1.text1.focus();
+            form1.reset();
+            return true;
+        } else {
+            alert("Invalid Email Address. Please enter correct email!!");
+            document.form1.text1.focus();
+            return false;
+        }
+    }
 </script>
