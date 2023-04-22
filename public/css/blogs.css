@@ -46,9 +46,9 @@ a {
 .flex-container {
   display: flex;
   justify-content: center;
+      flex-flow: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 /*     width: 80%; */
   gap: 2rem;
   margin-top: 3rem;
@@ -61,7 +61,7 @@ a {
 .card-box {
   display: flex;
   flex-flow: column;
-  width: 46.3%;
+  width: 46.3rem;
   background-color: white;
   font-size: 0.92rem;
   box-shadow: 0px 3px 4px gray;
@@ -112,6 +112,7 @@ a {
   font-size: 1.15rem;
   line-height: 1.7rem;
   padding-bottom: 2rem;
+  text-align:justify;
 }
 
 @media all and (max-width: 1200px) {
