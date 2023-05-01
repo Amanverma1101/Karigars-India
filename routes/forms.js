@@ -6,6 +6,7 @@ router.get('/kform',async(req,res)=>{
     const {email} = res.locals;
     res.render("k_form",{mailid: email});
 });
+
 router.post('/kform',async (req,res)=>{
     // console.log(req.body);
     const userdata = {
@@ -32,9 +33,6 @@ router.post('/kform',async (req,res)=>{
     return res.redirect('/karigars');
 });
 
-
-
-
 router.post('/iform',async (req,res)=>{
     // console.log(req.body);
     const userdata = {
@@ -54,6 +52,7 @@ router.post('/iform',async (req,res)=>{
     await db.collection(`internship`).doc(userdata.email).set(userdata);
     return res.redirect('/pop');
 });
+
 router.post('/sform',async (req,res)=>{
     // console.log(req.body);
     const userdata = {
@@ -76,6 +75,7 @@ router.get('/cform',async(req,res)=>{
     const {email} = res.locals;
     return res.render("cform",{mailid: email});
 });
+
 router.post('/postjob',async(req,res)=>{
     const newjobdata = {
         cname: req.body.cname,
@@ -95,6 +95,7 @@ router.post('/postjob',async(req,res)=>{
     await db.collection(`postjob`).doc(newjobdata.email).set(newjobdata);
     return res.redirect("/opportunity");
 });
+
 router.post('/cform',async(req,res)=>{
     const compdata = {
         fname: req.body.fname,
