@@ -5,7 +5,7 @@ const {db} = require('../config');
 
 router.get('/postjob',async(req,res)=>{
     const {msg} = res.locals;
-    if(msg==="Logout"){
+    if(msg==='Logout'){
         return res.render("postjob");
     }else{
         return res.render("notify");
@@ -48,6 +48,7 @@ router.post('/checkout',async(req,res)=>{
       const price = req.body.fprice;
       const gstp = req.body.gstprice;
       fprice=gstp;
+      const {msg} = res.locals;
     if(msg==="Logout"){
         return res.render("finalcheckout",{price: price,gst: gstp});
     }else{

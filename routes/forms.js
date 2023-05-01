@@ -27,6 +27,7 @@ router.post('/kform',async (req,res)=>{
     url: req.body.image_url,
     };
     // console.log(userdata);
+    if(userdata.url===""){userdata.url="https://pbs.twimg.com/profile_images/1269571859726688256/7v8kf3xX_400x400.jpg";}
     await db.collection(`karigarss`).doc(userdata.email).set(userdata);
     return res.redirect('/karigars');
 });
@@ -107,7 +108,7 @@ router.post('/cform',async(req,res)=>{
         loc: req.body.loc,
         url: req.body.image_url,
         };
-        console.log(compdata);
+        // console.log(compdata);
         await db.collection(`companies`).doc(compdata.email).set(compdata);
         return res.redirect("/companies");
 });
