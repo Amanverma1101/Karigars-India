@@ -46,19 +46,20 @@
 	#recaptcha-container {
 		margin-bottom: 5px;
 	}
-	#send, #verify {
+	#send, #verify, #bth {
 		width: 100%;
 		height: 40px;
 		outline: none;
 		cursor: pointer;
 		background-color: #01411C;
 		color: rgb(255, 255, 255);
+		margin-top: 8px;
 	}
 	#number, #verificationcode{
 		width: 100%;
 		height: 40px;
 	}
-	.p-conf, .n-conf {
+	.p-conf, .n-conf,.fianlbt {
 		width: 100%;
 		height: 40px;
 		border: 2px solid green;
@@ -105,6 +106,8 @@
 			<div id="verifier" style="display: none">
 				<input type="text" id="verificationcode" placeholder="OTP Code">
 				<input type="button" id="verify" value="Verify" onClick="codeverify()">
+				<br>
+				<input type="button" id="bth" value="Back to Home" onClick="bth()">
 				<div class="p-conf">Number Verified</div>
 				<div class="n-conf">OTP ERROR</div>
 			</div>
@@ -157,6 +160,11 @@ function codeverify(){
 		document.getElementsByClassName('p-conf')[0].style.display = 'none';
 		document.getElementsByClassName('n-conf')[0].style.display = 'block';
 	})
+}
+
+function bth()
+{
+	window.location.replace("/");
 }
 </script>
 </body>
