@@ -21,7 +21,7 @@ body {
 }
 
 .card {
-    width: 50vw;
+    width: 75vw;
     padding: 20px;
     margin: 0 20px;
     background: #fff;
@@ -84,7 +84,12 @@ body {
     font-size: 18px;
     font-weight: 500;
     margin: 8px 0 22px;
-    text-align: center;
+    text-align: justify;
+}
+
+.inter
+{
+    text-align: center !important;
 }
 
 .card .card-content button {

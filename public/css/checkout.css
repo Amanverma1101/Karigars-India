@@ -99,7 +99,7 @@ header .dropdown-menu{
 	min-width: 140px;
 	display: none;
 	border-radius: 2px;
-	z-index: 150;
+	/* z-index: 150; */
 }
 header .dropdown-menu ul{
 	list-style: none;
@@ -195,7 +195,7 @@ main{
 	margin-bottom: -40px;
 	box-shadow: 0 0 2px #808080;
 	position: relative;
-	z-index: 100;
+	/* z-index: 100; */
 }
 main .slider{
 	height: 450px;
@@ -682,7 +682,7 @@ div.prev{
 	color: var(--khaki);
 	border-radius: 2px;
 	padding-top: 4px;
-	z-index: 1000;
+	/* z-index: 1000; */
 	cursor: pointer;
 }
 div.next{
@@ -695,7 +695,7 @@ div.next{
 	color: var(--khaki);
 	border-radius: 2px;
 	padding-top: 4px;
-	z-index: 1000;
+	/* z-index: 1000; */
 	cursor: pointer;
 }
 div.prev:hover,
@@ -950,4 +950,36 @@ main .account-page .account-detail table td{
 	padding: 8px;
 	text-align: center;
 	border: 1px solid #eee;
+}
+@media (max-width: 974px) {
+	.container{
+		width: 90%;
+	}
+	main .contact form{
+		width: 100%;
+	}
+	main .checkout-page {
+		flex-direction: column;
+	}
+	main .order-summary {
+		width: 100%;
+	}
+	main form.checkout-form .form-inline{
+		flex-direction: column;
+	}
+	main .single-product .product-detail{
+		width: 100%;
+	}
+	main .checkout-page .billing-detail{
+		width: 100%;
+	}
+	main .account-page .account-detail{
+		width: 100%;
+	}
+	main .cart-page .cart-items .pagination ul{
+		width: 100%;
+	}
+	main form.checkout-form .form-inline .form-group {
+		width: 100%;
+	}
 }

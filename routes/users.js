@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const {db} = require('../config');
-
+const {
+    getprofile,
+    getkarigarslist,
+    getcomplist,
+    getcartdata
+} = require('../controllers/users');
 
 router.get('/postjob',async(req,res)=>{
     const {msg} = res.locals;
@@ -12,33 +16,10 @@ router.get('/postjob',async(req,res)=>{
     }
 });
 
-router.get("/profile",async(req,res)=>{
-    const {email} = res.locals;
-    let check=0;
-    console.log(email);
-    const snap = await db.collection(`karigarss`).get();
-    snap.forEach((doc) => {
-        if(doc.id==email){
-            check=1;
-           emplist={...doc.data()};
-            return res.render("profile",{list: emplist});
-        }
-      });
-      if(check==0){
-        return res.render("select");
-      }
-});
+router.get("/profile",getprofile);
 
-router.get('/karigars',async(req,res)=>{
-    let snapshot = await db.collection(`karigarss`).get(); 
-    let list = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-    return res.render("karigars", { newListItems: list });
-});
-router.get('/companies',async(req,res)=>{
-    let snapshot = await db.collection(`companies`).get(); 
-    let clist = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-    return res.render("companies", { newListItems: clist });
-});
+router.get('/karigars',getkarigarslist);
+router.get('/companies',getcomplist);
 router.get('/pricing',async(req,res)=>{
     res.render("pricing");
 });
@@ -59,16 +40,6 @@ router.get('/checkout',(req,res)=>{
     res.render("scnner",{price: fprice});
 });
 
-router.get('/cart/:id',async(req,res)=>{
-    const email = req.params.id;
-    const snap = await db.collection(`karigarss`).get();
-    snap.forEach((doc) => {
-        if(doc.id==email){
-           emplist={...doc.data()};
-            return res.render("cart",{list: emplist});
-        }
-      });
-      return ;
-});
+router.get('/cart/:id',getcartdata);
 
 module.exports = router;
