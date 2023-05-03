@@ -17,8 +17,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: inherit;
-    overflow-x: scroll;
+    flex-wrap: wrap;
+    /* overflow-x: scroll; */
 }
 
 .clients::-webkit-scrollbar {
