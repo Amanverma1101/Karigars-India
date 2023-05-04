@@ -79,7 +79,6 @@ body {
     position: relative;
   }
   
-  /* fix blank or flashing items on carousel */
   .owl-carousel .item {
     position: relative;
     z-index: 100; 
@@ -87,7 +86,6 @@ body {
     text-align: center;
   }
   
-  /* end fix */
   .owl-nav > div {
     margin-top: -26px;
     position: absolute;

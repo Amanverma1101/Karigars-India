@@ -231,3 +231,8 @@ footer .bottom-details .bottom_text {
         width: 100%;
     }
 }
+@media (max-width: 380px) and (min-width: 350px){
+    footer .bottom-details .bottom_text{
+        padding: 20px 58px;
+    }
+}

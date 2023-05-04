@@ -79,6 +79,10 @@ body {
     padding-top: 1rem;
 }
 
+.abt-dtl1 {
+    display: flex;
+}
+
 .pg-abt {
     font-size: 140%;
     font-family: 'Catamaran', sans-serif;
@@ -154,13 +158,17 @@ body {
 .abtus2::before {
     content: "";
     position: absolute;
-    background-color: rgb(213, 235, 254);
+    /* background-color: rgb(213, 235, 254); */
     width: 100%;
     height: 100%;
     z-index: -1;
     opacity: 0.3;
 }
-
+@media (max-width: 760px) {
+    .abt-dtl1 {
+        flex-direction: column-reverse;
+    }    
+}
 
 /* .btn-font{
     font-size: 8px;

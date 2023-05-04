@@ -133,12 +133,17 @@
 .container .contactusform .formBox .w100 {
   width: 100%;
 }
-@media screen and (min-width: 700px) {
+@media  (min-width: 700px) {
+  .container .contactinfo .info {
+    flex-direction: row-reverse;
+  }
+}
+@media  (max-width: 700px) {
   .container .contactinfo h2 {
     text-align: center;
   }
-  .container .contactinfo .info {
-    flex-direction: row;
+  .container .contactinfo {
+    margin: 40px;
   }
   .container .contactinfo li span:nth-child(2) {
     margin-right: 20px;
