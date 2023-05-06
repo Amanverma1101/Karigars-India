@@ -50,9 +50,9 @@
 }
 
 .para-centerr {
-    text-align: justify;
+    text-align: left;
     font-size: 14px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     display: initial;
 }
 
@@ -75,5 +75,14 @@
     text-align: center;
 }
 .item .card-body{
-    height: 80px;
+    height: 85px;
+}
+.item .card{
+    height: 25%;
+}
+
+@media (max-width:400px){
+    .item .card .card-title p{
+        font-size: 60%;
+    }
 }
