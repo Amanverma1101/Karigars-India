@@ -97,3 +97,9 @@
         font-size: 10px !important;
     }
 }
+@media (max-width:500px){
+    .item .card .card-title{
+        height: 40px;
+    }
+    
+}
