@@ -236,3 +236,30 @@ footer .bottom-details .bottom_text {
         padding: 20px 58px;
     }
 }
+
+
+.app {
+    z-index: 1000;
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    height: 60px;
+    width: 60px;
+    margin: 0 12px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 35px;
+    background: rgb(10, 183, 123);
+    transition: all 0.4s ease;
+    border-radius: 50%;
+}
+
+.app a {
+    color: rgb(255, 255, 255);
+    padding: 13px;
+    text-decoration: none;
+}
+
+.app:hover {
+    background-color: rgb(0, 82, 55);
+}
