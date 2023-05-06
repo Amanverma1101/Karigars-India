@@ -83,9 +83,7 @@
 }
 
 @media (max-width:700px){
-    .item {
-        height: 500px !important;
-    }
+
     .item .card img{
         height: 180px;
     }
