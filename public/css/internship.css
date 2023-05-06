@@ -52,8 +52,8 @@
 .para-centerr {
     text-align: left;
     font-size: 14px;
-    /* margin-bottom: 20px; */
-    display: initial;
+    margin-bottom: 20px;
+    /* display: initial; */
 }
 
 .clss {
@@ -74,15 +74,26 @@
 .intern-heading {
     text-align: center;
 }
-.item .card-body{
-    height: 85px;
+
+.item .card img{
+    height: 400px;
 }
-.item .card{
-    height: 25%;
+.item .card .card-title{
+    height: 40px;
 }
 
-@media (max-width:400px){
+@media (max-width:700px){
+    .item {
+        height: 500px !important;
+    }
+    .item .card img{
+        height: 180px;
+    }
+    .item .card .card-title{
+        height: 20px;
+    }
+    
     .item .card .card-title p{
-        font-size: 60%;
+        font-size: 10px !important;
     }
 }
