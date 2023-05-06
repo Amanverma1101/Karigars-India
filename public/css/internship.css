@@ -75,5 +75,13 @@
     text-align: center;
 }
 .item .card-body{
-    height: 80px;
+    height: 85px;
 }
+.item .card{
+    height: 25%;
+}
+/* @media (max-width:1400px){
+    .item .card{
+        height: 400px;
+    }
+} */
