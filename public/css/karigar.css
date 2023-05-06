@@ -99,3 +99,21 @@ flex-wrap: wrap;
     justify-content: space-around;
   }
  }
+
+ .newbtn{
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  padding: 10px ;
+  border-radius: 4px;
+ }
+ .newbtn:hover {
+  background-color: green;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+ .newk{
+  font-weight: 500;
+  font-size: 25px;
+ }
