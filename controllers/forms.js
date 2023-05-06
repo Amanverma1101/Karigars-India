@@ -1,6 +1,4 @@
-
 const {db} = require('../config');
-
 
 const setkformdata = async (req,res)=>{
     // console.log(req.body);

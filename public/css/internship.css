@@ -74,3 +74,6 @@
 .intern-heading {
     text-align: center;
 }
+.item .card-body{
+    height: 80px;
+}
