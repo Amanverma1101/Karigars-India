@@ -10,7 +10,7 @@ const mw = async(req,res,next)=>{
         const payload = isTokenValid({token});
         res.locals.msg="Logout";
         res.locals.icon = "fa-user";
-        res.locals.email = payload.email;;
+        res.locals.email = payload.email;
         next();
     }
 };
